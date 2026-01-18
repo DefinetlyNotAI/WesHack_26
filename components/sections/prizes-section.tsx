@@ -144,13 +144,6 @@ export function PrizesSection() {
 
                 {/* Total prize pool */}
                 <div className="flex flex-col items-center mt-16">
-                    <Image
-                        src={IMAGES.prizes.special || "/placeholder.svg"}
-                        alt={IMAGE_ALT.prizes.special}
-                        width={200}
-                        height={200}
-                        className="opacity-20 grayscale"
-                    />
                     <div className="text-center -mt-16 relative">
                         <div className="flex justify-center gap-2 text-amber/40 mb-2">
                             <span>{SIGILS.diamond}</span>

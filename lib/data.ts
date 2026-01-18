@@ -215,11 +215,11 @@ export const SITE_DATA: SiteData = {
         experiments: [
             {
                 year: "2024",
-                title: "Wes:Hack 24",
+                title: "WesHack 24",
                 theme: "Astronomy",
                 participants: 40,
                 projects: 12,
-                imageKey: "weshack24" as const, // Must match IMAGES.archives key
+                imageKey: "weshack24" as const,
             },
             {
                 year: "2025",
@@ -274,21 +274,29 @@ export const SITE_DATA: SiteData = {
             },
         ],
         subMembers: [
-            {
-                name: "Name1",
-                role: "Role1",
-                grade: "12 BC"
-            },
-            {
-                name: "Name2",
-                role: "Role2",
-                grade: "13 GC"
-            },
-            {
-                name: "Name3",
-                role: "Role3",
-                grade: "13 BC"
-            },
+            // Leads
+            {name: "Aizay Mushaq", role: "Team Lead"},
+            {name: "Ahmed Saad", role: "Team Lead"},
+
+            // Girls
+            {name: "Shafana Shahriar", role: "Team Member"},
+            {name: "Maryam Ali", role: "Team Member"},
+            {name: "Lara Ameen", role: "Team Member"},
+            {name: "Lara Elgharably", role: "Team Member"},
+            {name: "Leen Elgharably", role: "Team Member"},
+
+            // Boys
+            {name: "Ayaan Islam", role: "Team Member"},
+            {name: "Mohammad Bin Majid", role: "Team Member"},
+            {name: "Maher Ben Khadra", role: "Team Member"},
+            {name: "Issa alamoody", role: "Team Member"},
+            {name: "Fahmy alamoody", role: "Team Member"},
+            {name: "Samir Ibrahim", role: "Team Member"},
+
+            // Media Department
+            {name: "Aon Alaa", role: "Media Lead"},
+            {name: "Adham Hamdy", role: "Media Member"},
+            {name: "Omar Moamen", role: "Media Member"},
         ]
     },
 

@@ -6,26 +6,26 @@
 import {ImageAltMap, ImageMap} from "@/types";
 
 export const IMAGES: ImageMap = {
+    // Prize images (not actual prize images, but flavor images)
     prizes: {
         grand: "/images/prizes/philosophers-stone.jpg",
         second: "/images/prizes/elixir-vitae.jpg",
-        third: "/images/prizes/alkahest.jpg",
-        special: "/images/prizes/azoth-award.jpg",
+        third: "/images/prizes/transmuters-mirror.png",
     },
-    // Team member photos - KEEP (actual photos)
+    // Team member photos
     team: {
         layal: "/images/team/layal.jpg",
         mishal: "/images/team/mishal.jpg",
         mustafa: "/images/team/mustafa.jpg",
         shahm: "/images/team/shahm.jpg",
     },
-    // Previous hackathon cover images - KEEP (actual event photos)
+    // Previous hackathon cover images
     archives: {
-        checkpoint: "/images/archives/checkpoint.jpg",
-        scrapyard: "/images/archives/scrapyard.jpg",
         weshack24: "/images/archives/weshack-24.jpg",
+        scrapyard: "/images/archives/scrapyard.jpg",
+        checkpoint: "/images/archives/checkpoint.jpg",
     },
-    // Gallery images - KEEP (actual event photos)
+    // Gallery images
     gallery: {
         img1: "/images/gallery/transmutation-001.jpg",
         img2: "/images/gallery/transmutation-002.jpg",

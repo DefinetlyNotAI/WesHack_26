@@ -4,6 +4,49 @@ import {CornerSigils, SigilDivider,} from "@/components/ui/alchemy-sigils";
 import {SITE_DATA} from "@/lib/data";
 import {SIGILS} from "@/lib/sigils";
 
+const SIGIL_CYCLE = [
+    SIGILS.pentagram,
+    SIGILS.atom,
+    SIGILS.ankh,
+    SIGILS.caduceus,
+    SIGILS.ouroboros,
+];
+
+function MemberCard({sub, sigil}: { sub: any; sigil: string }) {
+    return (
+        <div
+            className="bg-ink/20 border border-parchment/10 p-4 text-parchment/80 rounded transition-colors hover:border-phosphor/30">
+            <div className="flex items-center justify-between mb-2">
+                <p className="font-mono text-sm">{sub.name}</p>
+                <span className="text-parchment/40 text-lg">{sigil}</span>
+            </div>
+            <p className="font-mono text-xs text-amber mt-1">{sub.role}</p>
+        </div>
+    );
+}
+
+function Grid({
+                  items,
+                  cols,
+                  offset = 0,
+              }: {
+    items: any[];
+    cols: string;
+    offset?: number;
+}) {
+    return (
+        <div className={`grid ${cols} gap-4 mb-6`}>
+            {items.map((sub, idx) => (
+                <MemberCard
+                    key={sub.name}
+                    sub={sub}
+                    sigil={SIGIL_CYCLE[(idx + offset) % SIGIL_CYCLE.length]}
+                />
+            ))}
+        </div>
+    );
+}
+
 export function TeamSection() {
     const {team} = SITE_DATA;
 
@@ -90,39 +133,41 @@ export function TeamSection() {
                         </div>
                     ))}
                 </div>
-
                 {/* Sub-members Section */}
                 {team.subMembers && team.subMembers.length > 0 && (
                     <div className="mt-16">
                         <h3 className="font-serif text-2xl text-parchment mb-6 text-center">
                             Other Adepts
                         </h3>
-                        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                            {team.subMembers.map((sub, idx) => {
-                                const cycle = [
-                                    SIGILS.pentagram,
-                                    SIGILS.atom,
-                                    SIGILS.ankh,
-                                    SIGILS.caduceus,
-                                    SIGILS.ouroboros,
-                                ];
-                                const sigil = cycle[idx % cycle.length];
 
-                                return (
-                                    <div
-                                        key={idx}
-                                        className="bg-ink/20 border border-parchment/10 p-4 text-parchment/80 rounded transition-colors hover:border-phosphor/30"
-                                    >
-                                        <div className="flex items-center justify-between mb-2">
-                                            <p className="font-mono text-sm">{sub.name}</p>
-                                            <span className="text-parchment/40 text-lg">{sigil}</span>
-                                        </div>
-                                        {sub.role && <p className="font-mono text-xs text-amber mt-1">{sub.role}</p>}
-                                        {sub.grade &&
-                                            <p className="font-mono text-xs text-parchment/50 mt-1">{sub.grade}</p>}
+                        <Grid
+                            cols="sm:grid-cols-2 lg:grid-cols-2"
+                            items={team.subMembers.filter(m => m.role === "Team Lead")}
+                        />
+
+                        <Grid
+                            cols="sm:grid-cols-2 lg:grid-cols-5"
+                            items={team.subMembers.filter(m => m.role === "Team Member").slice(0, 5)}
+                        />
+
+                        <Grid
+                            cols="sm:grid-cols-2 lg:grid-cols-6"
+                            offset={5}
+                            items={team.subMembers.filter(m => m.role === "Team Member").slice(5, 11)}
+                        />
+
+                        <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+                            {team.subMembers
+                                .filter(m => m.role.includes("Media"))
+                                .sort(a => (a.role === "Media Lead" ? -1 : 1))
+                                .map((sub, idx) => (
+                                    <div key={sub.name} className="w-full sm:w-1/4">
+                                        <MemberCard
+                                            sub={sub}
+                                            sigil={SIGIL_CYCLE[idx % SIGIL_CYCLE.length]}
+                                        />
                                     </div>
-                                );
-                            })}
+                                ))}
                         </div>
                     </div>
                 )}

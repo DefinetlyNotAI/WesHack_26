@@ -75,7 +75,7 @@ export interface TeamMember {
 
 export interface SubTeamMember {
     name: string;
-    role?: string;
+    role: string;
     grade?: string;
 }
 
