@@ -31,9 +31,9 @@ const HIDDEN_COMMANDS = `
 - Type 'alchemy' in the console for a surprise
 - Konami Code unlocks secret knowledge
 - Click the 404 number 7 times
-- Find the hidden page of secrets
+- Find the hidden page of secrets in the foot
 - Hover over the footer sigils
-- The password is hidden in the binary
+- The theme is hidden in the binary
 `;
 
 export function ConsoleMessages() {
