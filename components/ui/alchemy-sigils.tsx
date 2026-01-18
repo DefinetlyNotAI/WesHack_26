@@ -1,5 +1,5 @@
 import React from "react"
-import {cn} from "@/lib/utils";
+import {cn} from "@/lib/ui";
 
 // Alchemy-inspired sigils using Unicode symbols and decorative characters
 export const SIGILS = {

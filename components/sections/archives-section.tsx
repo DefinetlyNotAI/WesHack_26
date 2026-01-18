@@ -1,7 +1,9 @@
 import Image from "next/image";
-import {EXTERNAL_LINKS, IMAGE_ALT, IMAGES, SITE_DATA} from "@/lib/images";
+import {IMAGE_ALT, IMAGES} from "@/lib/images";
 import {ParchmentButton} from "@/components/ui/parchment-button";
 import {CornerSigils, SigilDivider, SIGILS,} from "@/components/ui/alchemy-sigils";
+import {EXTERNAL_LINKS} from "@/lib/links";
+import {SITE_DATA} from "@/lib/data";
 
 export function ArchivesSection() {
     const {archives} = SITE_DATA;
@@ -102,7 +104,7 @@ export function ArchivesSection() {
                         {SIGILS.circleFilled} SUBJECTS
                       </span>
                                             <span className="font-mono text-lg text-ink">
-                        {exp.participants}
+                        {exp.participants}+
                       </span>
                                         </div>
                                         <div>
@@ -110,7 +112,7 @@ export function ArchivesSection() {
                         {SIGILS.squareFilled} OUTPUTS
                       </span>
                                             <span className="font-mono text-lg text-ink">
-                        {exp.projects}
+                        {exp.projects}+
                       </span>
                                         </div>
                                     </div>

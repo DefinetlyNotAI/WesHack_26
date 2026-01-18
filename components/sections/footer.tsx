@@ -3,8 +3,10 @@
 import {useState} from "react";
 import Image from "next/image";
 import Link from "next/link";
-import {EXTERNAL_LINKS, IMAGE_ALT, IMAGES, SITE_DATA} from "@/lib/images";
+import {IMAGE_ALT, IMAGES} from "@/lib/images";
 import {SigilDivider, SIGILS} from "@/components/ui/alchemy-sigils";
+import {EXTERNAL_LINKS} from "@/lib/links";
+import {SITE_DATA} from "@/lib/data";
 
 export function Footer() {
     const {footer, event} = SITE_DATA;
@@ -94,7 +96,7 @@ export function Footer() {
                     </div>
 
                     {/* Navigation */}
-                    <nav className="flex flex-wrap justify-center gap-6">
+                    <nav className="flex flex-nowrap justify-center gap-6 overflow-x-hidden">
                         {[
                             {href: "#register", label: "Register"},
                             {href: "#process", label: "Process"},
@@ -107,7 +109,7 @@ export function Footer() {
                                 <Link
                                     key={item.label}
                                     href={item.href}
-                                    className="font-mono text-xs text-parchment/50 hover:text-phosphor transition-colors uppercase tracking-wider flex items-center gap-1"
+                                    className="font-mono text-xs text-parchment/50 hover:text-phosphor transition-colors uppercase tracking-wider flex items-center gap-1 whitespace-nowrap"
                                 >
                                     <span className="text-parchment/30">{SIGILS.diamond}</span>
                                     {item.label}
@@ -116,7 +118,7 @@ export function Footer() {
                                 <a
                                     key={item.label}
                                     href={item.href}
-                                    className="font-mono text-xs text-parchment/50 hover:text-phosphor transition-colors uppercase tracking-wider flex items-center gap-1"
+                                    className="font-mono text-xs text-parchment/50 hover:text-phosphor transition-colors uppercase tracking-wider flex items-center gap-1 whitespace-nowrap"
                                 >
                                     <span className="text-parchment/30">{SIGILS.diamond}</span>
                                     {item.label}

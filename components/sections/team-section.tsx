@@ -1,6 +1,7 @@
 import Image from "next/image";
-import {IMAGE_ALT, IMAGES, SITE_DATA} from "@/lib/images";
+import {IMAGE_ALT, IMAGES} from "@/lib/images";
 import {CornerSigils, SigilDivider, SIGILS,} from "@/components/ui/alchemy-sigils";
+import {SITE_DATA} from "@/lib/data";
 
 export function TeamSection() {
     const {team} = SITE_DATA;
@@ -72,15 +73,15 @@ export function TeamSection() {
 
                                 {/* Index overlay with sigil */}
                                 <div className="absolute bottom-2 left-2 flex items-center gap-2">
-                  <span className="font-mono text-xs text-phosphor/60">
-                    OP_{String(index + 1).padStart(2, "0")}
-                  </span>
+                                      <span className="font-mono text-xs text-phosphor/60">
+                                        OP_{String(index + 1).padStart(2, "0")}
+                                      </span>
                                     <span className="text-parchment/40">
-                    {index === 0 && SIGILS.gold}
+                                        {index === 0 && SIGILS.air}
                                         {index === 1 && SIGILS.iron}
-                                        {index === 2 && SIGILS.mercury}
+                                        {index === 2 && SIGILS.gold}
                                         {index === 3 && SIGILS.silver}
-                  </span>
+                                      </span>
                                 </div>
 
                                 {/* Hover sigil */}
@@ -116,7 +117,7 @@ export function TeamSection() {
                         <span>{SIGILS.aquarius}</span>
                     </div>
                     <p className="font-mono text-xs text-parchment/40">
-                        OPERATORS_ACTIVE: {team.members.length} {SIGILS.bullet} CLEARANCE: LEVEL_7
+                        OPERATORS_ACTIVE: {team.members.length} {SIGILS.bullet} CLEARANCE: LEVEL_25
                     </p>
                 </div>
             </div>

@@ -1,8 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import {IMAGE_ALT, IMAGES, SITE_DATA} from "@/lib/images";
+import {IMAGE_ALT, IMAGES} from "@/lib/images";
 import {CornerSigils, SigilDivider, SIGILS,} from "@/components/ui/alchemy-sigils";
+import {SITE_DATA} from "@/lib/data";
 
 export function PrizesSection() {
     const {prizes} = SITE_DATA;
@@ -52,11 +53,14 @@ export function PrizesSection() {
                 </div>
 
                 {/* Main Prizes */}
-                <div className="grid lg:grid-cols-3 gap-8 mb-20">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20 items-end">
                     {prizes.main.map((prize, index) => (
                         <div
                             key={prize.rank}
-                            className={`relative group ${index === 0 ? "lg:-mt-8" : ""}`}
+                            className={`
+        relative group 
+        ${index === 1 ? "md:scale-110 md:-mt-8 z-10" : "md:mt-4"}
+      `}
                         >
                             {/* Prize Card */}
                             <div
@@ -76,30 +80,19 @@ export function PrizesSection() {
 
                                     {/* Rank badge with sigil */}
                                     <div className="absolute top-4 left-4 flex items-center gap-2">
-                    <span className="font-mono text-xs bg-ink/80 text-phosphor px-3 py-1 border border-phosphor/30">
-                      {index === 0 && SIGILS.gold}
-                        {index === 1 && SIGILS.silver}
-                        {index === 2 && SIGILS.copper}
-                        {" "}{prize.rank}
-                    </span>
-                                    </div>
-
-                                    {/* Value */}
-                                    <div className="absolute bottom-4 right-4">
-                    <span className="font-serif text-3xl text-amber">
-                      {prize.value}
-                    </span>
+            <span className="font-mono text-xs bg-ink/80 text-phosphor px-3 py-1 border border-phosphor/30">
+              {index === 0 && SIGILS.gold}
+                {index === 1 && SIGILS.gold}
+                {index === 2 && SIGILS.copper}
+                {" "}{prize.rank}
+            </span>
                                     </div>
                                 </div>
 
                                 {/* Prize Details */}
                                 <div className="p-6">
-                                    <h3 className="font-serif text-2xl text-parchment mb-3">
-                                        {prize.title}
-                                    </h3>
-                                    <p className="font-mono text-parchment/60 text-sm mb-6 leading-relaxed">
-                                        {prize.description}
-                                    </p>
+                                    <h3 className="font-serif text-2xl text-parchment mb-3">{prize.title}</h3>
+                                    <p className="font-mono text-parchment/60 text-sm mb-6 leading-relaxed">{prize.description}</p>
 
                                     <SigilDivider variant="simple" className="text-parchment/20 mb-4"/>
 
@@ -108,9 +101,7 @@ export function PrizesSection() {
                                         {prize.perks.map((perk, perkIndex) => (
                                             <div key={perkIndex} className="flex items-start gap-3">
                                                 <span className="text-phosphor">{SIGILS.arrowRight}</span>
-                                                <span className="font-mono text-parchment/70 text-sm">
-                          {perk}
-                        </span>
+                                                <span className="font-mono text-parchment/70 text-sm">{perk}</span>
                                             </div>
                                         ))}
                                     </div>
@@ -144,30 +135,22 @@ export function PrizesSection() {
                         </h3>
                     </div>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {prizes.special.map((award) => (
-                            <div
-                                key={award.title}
-                                className="group relative p-6 border border-parchment/10 bg-ink/30 hover:border-phosphor/30 transition-colors"
-                            >
-                                <CornerSigils sigil="diamond" className="text-parchment/20 text-xs"/>
+                    <div className="flex justify-center mb-20">
+                        <div
+                            className="relative p-8 max-w-sm border border-parchment/10 bg-ink/30 hover:border-phosphor/30 transition-colors">
+                            <CornerSigils sigil="diamond" className="text-parchment/20 text-xs"/>
 
-                                <div className="flex items-center justify-between mb-3">
-                  <span className="font-mono text-phosphor text-xs">
-                    {SIGILS.star}
-                  </span>
-                                    <span className="font-serif text-amber text-lg">
-                    {award.value}
-                  </span>
-                                </div>
-                                <h4 className="font-serif text-lg text-parchment mb-2">
-                                    {award.title}
-                                </h4>
-                                <p className="font-mono text-parchment/50 text-xs leading-relaxed">
-                                    {award.description}
-                                </p>
+                            <div className="flex items-center justify-between mb-4">
+                                <span className="font-mono text-phosphor text-xs">{SIGILS.star}</span>
+                                <span className="font-serif text-amber text-lg">{prizes.extra.value}</span>
                             </div>
-                        ))}
+
+                            <h4 className="font-serif text-xl text-parchment mb-3 text-center">{prizes.extra.title}</h4>
+
+                            <p className="font-mono text-parchment/50 text-sm leading-relaxed text-center">
+                                {prizes.extra.description}
+                            </p>
+                        </div>
                     </div>
                 </div>
 
@@ -186,9 +169,6 @@ export function PrizesSection() {
                             <span>{SIGILS.gold}</span>
                             <span>{SIGILS.diamond}</span>
                         </div>
-                        <span className="font-mono text-parchment/60 text-sm tracking-widest">
-              TOTAL PRIZE POOL: {prizes.totalPool}
-            </span>
                     </div>
                 </div>
             </div>

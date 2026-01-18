@@ -2,9 +2,11 @@
 
 import React, {useState} from "react";
 import Image from "next/image";
-import {EXTERNAL_LINKS, IMAGE_ALT, IMAGES, SITE_DATA} from "@/lib/images";
+import {IMAGE_ALT, IMAGES} from "@/lib/images";
 import {ParchmentButton} from "@/components/ui/parchment-button";
 import {AlchemyCircle, CornerSigils, SigilDivider, SIGILS,} from "@/components/ui/alchemy-sigils";
+import {EXTERNAL_LINKS} from "@/lib/links";
+import {SITE_DATA} from "@/lib/data";
 
 export function ContactSection() {
     const [subject, setSubject] = useState("");
@@ -99,20 +101,12 @@ export function ContactSection() {
                 </span>
                                 <div className="font-mono text-sm text-ink mt-1 space-y-1">
                                     <a
-                                        href={EXTERNAL_LINKS.social.twitter}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="block hover:text-phosphor transition-colors"
-                                    >
-                                        {SIGILS.arrowRight} @digital_alchemy [twitter]
-                                    </a>
-                                    <a
                                         href={EXTERNAL_LINKS.social.discord}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="block hover:text-phosphor transition-colors"
                                     >
-                                        {SIGILS.arrowRight} discord.gg/alchemy
+                                        {SIGILS.arrowRight} Hack Street
                                     </a>
                                     <a
                                         href={EXTERNAL_LINKS.social.github}
