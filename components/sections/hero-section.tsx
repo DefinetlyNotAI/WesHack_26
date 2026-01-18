@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-import {IMAGE_ALT, IMAGES} from "@/lib/images";
 import {ParchmentButton} from "@/components/ui/parchment-button";
 import {AlchemyCircle, SigilDivider,} from "@/components/ui/alchemy-sigils";
 import {SITE_DATA} from "@/lib/data";
@@ -12,33 +10,12 @@ export function HeroSection() {
 
     return (
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-            {/* Background Image */}
-            <div className="absolute inset-0 z-0">
-                <Image
-                    src={IMAGES.backgrounds.hero || "/placeholder.svg"}
-                    alt={IMAGE_ALT.backgrounds.hero}
-                    fill
-                    className="object-cover"
-                    priority
-                />
-                {/* Noise overlay */}
-                <div className="absolute inset-0 z-10 opacity-30 mix-blend-overlay">
-                    <Image
-                        src={IMAGES.backgrounds.noise || "/placeholder.svg"}
-                        alt={IMAGE_ALT.backgrounds.noise}
-                        fill
-                        className="object-cover"
-                    />
-                </div>
-                {/* Scanline effect */}
-                <div className="absolute inset-0 z-20 opacity-10 pointer-events-none">
-                    <Image
-                        src={IMAGES.backgrounds.scanlines || "/placeholder.svg"}
-                        alt={IMAGE_ALT.backgrounds.scanlines}
-                        fill
-                        className="object-cover"
-                    />
-                </div>
+            {/* Background - replaced images with CSS */}
+            <div className="absolute inset-0 z-0 bg-hero-parchment">
+                {/* Noise overlay - CSS texture */}
+                <div className="absolute inset-0 z-10 opacity-30 mix-blend-overlay bg-noise"/>
+                {/* Scanline effect - CSS */}
+                <div className="absolute inset-0 z-20 opacity-10 pointer-events-none bg-scanlines"/>
             </div>
 
             {/* Content */}

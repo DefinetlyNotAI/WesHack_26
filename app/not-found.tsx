@@ -2,7 +2,6 @@
 
 import {useEffect, useState} from "react";
 import {ParchmentButton} from "@/components/ui/parchment-button";
-import {IMAGES} from "@/lib/images";
 import {SIGILS} from "@/lib/sigils";
 
 const GLITCH_TEXTS = [
@@ -74,14 +73,8 @@ export default function NotFound() {
 
     return (
         <main className="relative min-h-screen bg-charcoal overflow-hidden flex items-center justify-center">
-            {/* Background */}
-            <div
-                className="absolute inset-0 opacity-10"
-                style={{
-                    backgroundImage: `url(${IMAGES.backgrounds.noise})`,
-                    backgroundRepeat: "repeat",
-                }}
-            />
+            {/* Background - replaced images with CSS */}
+            <div className="absolute inset-0 opacity-10 bg-noise"/>
 
             {/* Floating binary */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">

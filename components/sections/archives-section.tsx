@@ -11,16 +11,8 @@ export function ArchivesSection() {
 
     return (
         <section id="archives" className="relative py-24 md:py-32">
-            {/* Background */}
-            <div className="absolute inset-0 z-0">
-                <Image
-                    src={IMAGES.sections.archive || "/placeholder.svg"}
-                    alt={IMAGE_ALT.sections.archive}
-                    fill
-                    className="object-cover"
-                />
-                <div className="absolute inset-0 bg-parchment/95"/>
-            </div>
+            {/* Background - replaced images with CSS */}
+            <div className="absolute inset-0 z-0 bg-section-light"/>
 
             <div className="relative z-10 max-w-5xl mx-auto px-6">
                 {/* Section Header */}

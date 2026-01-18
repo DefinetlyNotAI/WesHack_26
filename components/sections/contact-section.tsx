@@ -1,8 +1,6 @@
 "use client";
 
 import React, {useState} from "react";
-import Image from "next/image";
-import {IMAGE_ALT, IMAGES} from "@/lib/images";
 import {ParchmentButton} from "@/components/ui/parchment-button";
 import {AlchemyCircle, CornerSigils, SigilDivider,} from "@/components/ui/alchemy-sigils";
 import {EXTERNAL_LINKS} from "@/lib/links";
@@ -30,24 +28,10 @@ export function ContactSection() {
 
     return (
         <section id="contact" className="relative py-24 md:py-32">
-            {/* Background */}
-            <div className="absolute inset-0 z-0">
-                <Image
-                    src={IMAGES.sections.contact || "/placeholder.svg"}
-                    alt={IMAGE_ALT.sections.contact}
-                    fill
-                    className="object-cover"
-                />
-                <div className="absolute inset-0 bg-parchment/90"/>
-                {/* Scanlines */}
-                <div className="absolute inset-0 opacity-5">
-                    <Image
-                        src={IMAGES.backgrounds.scanlines || "/placeholder.svg"}
-                        alt={IMAGE_ALT.backgrounds.scanlines}
-                        fill
-                        className="object-cover"
-                    />
-                </div>
+            {/* Background - replaced images with CSS */}
+            <div className="absolute inset-0 z-0 bg-section-light">
+                {/* Scanlines - CSS */}
+                <div className="absolute inset-0 opacity-5 bg-scanlines"/>
             </div>
 
             <div className="relative z-10 max-w-4xl mx-auto px-6">

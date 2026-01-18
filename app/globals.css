@@ -128,3 +128,65 @@
 .animate-scanline {
     animation: scanline 8s linear infinite;
 }
+
+/* ============================================ */
+/* CSS Textures & Effects (replacing images)   */
+/* ============================================ */
+
+/* Noise texture using CSS */
+.bg-noise {
+    background-image: repeating-conic-gradient(from 0deg at 50% 50%,
+    transparent 0deg,
+    rgba(0, 0, 0, 0.03) 0.0001deg,
+    transparent 0.0002deg,
+    transparent 0.002deg);
+    background-size: 200px 200px;
+}
+
+/* Scanline effect using CSS */
+.bg-scanlines {
+    background-image: repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba(0, 0, 0, 0.05) 2px,
+            rgba(0, 0, 0, 0.05) 4px
+    );
+    background-size: 100% 4px;
+}
+
+/* Paper/parchment texture using CSS */
+.bg-paper-texture {
+    background-color: var(--parchment);
+    background-image: radial-gradient(circle at 20% 50%, transparent 0%, rgba(101, 84, 63, 0.03) 100%),
+    radial-gradient(circle at 80% 80%, transparent 0%, rgba(101, 84, 63, 0.02) 100%),
+    radial-gradient(circle at 40% 20%, transparent 0%, rgba(101, 84, 63, 0.02) 100%);
+}
+
+/* Hero parchment background with gradient */
+.bg-hero-parchment {
+    background: linear-gradient(
+            135deg,
+            oklch(0.95 0.02 85) 0%,
+            oklch(0.92 0.02 80) 50%,
+            oklch(0.94 0.02 82) 100%
+    );
+}
+
+/* Section backgrounds - subtle gradients */
+.bg-section-dark {
+    background: linear-gradient(
+            180deg,
+            var(--charcoal) 0%,
+            var(--ink) 100%
+    );
+}
+
+.bg-section-light {
+    background: linear-gradient(
+            180deg,
+            var(--parchment) 0%,
+            var(--offwhite) 100%
+    );
+}
+

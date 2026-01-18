@@ -9,24 +9,10 @@ export function TeamSection() {
 
     return (
         <section id="team" className="relative py-24 md:py-32">
-            {/* Background */}
-            <div className="absolute inset-0 z-0">
-                <Image
-                    src={IMAGES.sections.team || "/placeholder.svg"}
-                    alt={IMAGE_ALT.sections.team}
-                    fill
-                    className="object-cover"
-                />
-                <div className="absolute inset-0 bg-charcoal/95"/>
-                {/* Noise overlay */}
-                <div className="absolute inset-0 opacity-20 mix-blend-overlay">
-                    <Image
-                        src={IMAGES.backgrounds.noise || "/placeholder.svg"}
-                        alt={IMAGE_ALT.backgrounds.noise}
-                        fill
-                        className="object-cover"
-                    />
-                </div>
+            {/* Background - replaced images with CSS */}
+            <div className="absolute inset-0 z-0 bg-section-dark">
+                {/* Noise overlay - CSS texture */}
+                <div className="absolute inset-0 opacity-20 mix-blend-overlay bg-noise"/>
             </div>
 
             <div className="relative z-10 max-w-5xl mx-auto px-6">

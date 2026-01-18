@@ -1,35 +1,20 @@
 "use client";
 
-import Image from "next/image";
-import {IMAGE_ALT, IMAGES} from "@/lib/images";
 import {CornerSigils, SigilDivider,} from "@/components/ui/alchemy-sigils";
 import {SITE_DATA} from "@/lib/data";
 import {SIGILS} from "@/lib/sigils";
+import {Clock, Hourglass} from "lucide-react";
 
 export function ScheduleSection() {
     const {schedule} = SITE_DATA;
 
     return (
         <section className="relative py-24 overflow-hidden">
-            {/* Background Image */}
-            <div className="absolute inset-0">
-                <Image
-                    src={IMAGES.sections.schedule || "/placeholder.svg"}
-                    alt={IMAGE_ALT.sections.schedule}
-                    fill
-                    className="object-cover grayscale opacity-20"
-                />
-                <div className="absolute inset-0 bg-charcoal/90"/>
-            </div>
+            {/* Background - replaced images with CSS */}
+            <div className="absolute inset-0 bg-section-dark"/>
 
-            {/* Noise overlay */}
-            <div
-                className="absolute inset-0 opacity-30 mix-blend-overlay pointer-events-none"
-                style={{
-                    backgroundImage: `url(${IMAGES.backgrounds.noise})`,
-                    backgroundRepeat: "repeat",
-                }}
-            />
+            {/* Noise overlay - CSS texture */}
+            <div className="absolute inset-0 opacity-30 mix-blend-overlay pointer-events-none bg-noise"/>
 
             <div className="container relative mx-auto px-6">
                 {/* Section Header */}
@@ -42,13 +27,7 @@ export function ScheduleSection() {
                     </h2>
                     <div className="flex items-center justify-center gap-4">
                         <div className="h-px w-16 bg-parchment/30"/>
-                        <Image
-                            src={IMAGES.schedule.hourglass || "/placeholder.svg"}
-                            alt={IMAGE_ALT.schedule.hourglass}
-                            width={40}
-                            height={40}
-                            className="opacity-60"
-                        />
+                        <Hourglass className="w-10 h-10 text-parchment opacity-60"/>
                         <div className="h-px w-16 bg-parchment/30"/>
                     </div>
                 </div>
@@ -119,13 +98,7 @@ export function ScheduleSection() {
 
                 {/* Clockwork decoration */}
                 <div className="flex flex-col items-center mt-16 gap-4">
-                    <Image
-                        src={IMAGES.schedule.clockwork || "/placeholder.svg"}
-                        alt={IMAGE_ALT.schedule.clockwork}
-                        width={120}
-                        height={120}
-                        className="opacity-30 grayscale"
-                    />
+                    <Clock className="w-30 h-30 text-parchment opacity-30"/>
                     <SigilDivider variant="terminal" className="max-w-xs text-parchment/30"/>
                     <div className="flex gap-4 text-parchment/20">
                         <span>{SIGILS.libra}</span>

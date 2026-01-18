@@ -24,23 +24,10 @@ export default function GalleryPage() {
 
     return (
         <main className="min-h-screen bg-charcoal">
-            {/* Background */}
-            <div className="fixed inset-0 z-0">
-                <Image
-                    src={IMAGES.sections.gallery || "/placeholder.svg"}
-                    alt={IMAGE_ALT.sections.gallery}
-                    fill
-                    className="object-cover opacity-10 grayscale"
-                />
-                <div className="absolute inset-0 bg-linear-to-b from-charcoal via-charcoal/95 to-ink"/>
-                {/* Noise overlay */}
-                <div
-                    className="absolute inset-0 opacity-20 mix-blend-overlay pointer-events-none"
-                    style={{
-                        backgroundImage: `url(${IMAGES.backgrounds.noise})`,
-                        backgroundRepeat: "repeat",
-                    }}
-                />
+            {/* Background - replaced images with CSS */}
+            <div className="fixed inset-0 z-0 bg-section-dark">
+                {/* Noise overlay - CSS texture */}
+                <div className="absolute inset-0 opacity-20 mix-blend-overlay pointer-events-none bg-noise"/>
             </div>
 
             {/* Header */}
@@ -162,12 +149,7 @@ export default function GalleryPage() {
 
                                         {/* Scan line effect */}
                                         <div
-                                            className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity pointer-events-none"
-                                            style={{
-                                                backgroundImage: `url(${IMAGES.backgrounds.scanlines})`,
-                                                backgroundSize: "cover",
-                                            }}
-                                        />
+                                            className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity pointer-events-none bg-scanlines"/>
                                     </div>
                                 </div>
                             );

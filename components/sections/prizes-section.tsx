@@ -11,26 +11,11 @@ export function PrizesSection() {
 
     return (
         <section className="relative py-24 overflow-hidden">
-            {/* Background */}
-            <div className="absolute inset-0">
-                <Image
-                    src={IMAGES.sections.prizes || "/placeholder.svg"}
-                    alt={IMAGE_ALT.sections.prizes}
-                    fill
-                    className="object-cover grayscale opacity-15"
-                />
-                <div className="absolute inset-0 bg-linear-to-b from-ink via-ink/95 to-ink"/>
-            </div>
+            {/* Background - replaced images with CSS */}
+            <div className="absolute inset-0 bg-section-dark"/>
 
-            {/* Paper texture overlay */}
-            <div
-                className="absolute inset-0 opacity-20 pointer-events-none"
-                style={{
-                    backgroundImage: `url(${IMAGES.backgrounds.paper})`,
-                    backgroundSize: "cover",
-                    mixBlendMode: "overlay",
-                }}
-            />
+            {/* Paper texture overlay - CSS */}
+            <div className="absolute inset-0 opacity-20 pointer-events-none bg-paper-texture mix-blend-overlay"/>
 
             <div className="container relative mx-auto px-6">
                 {/* Section Header */}

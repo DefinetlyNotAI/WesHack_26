@@ -1,5 +1,3 @@
-import Image from "next/image";
-import {IMAGE_ALT, IMAGES} from "@/lib/images";
 import {ParchmentButton} from "@/components/ui/parchment-button";
 import {CornerSigils, SigilDivider,} from "@/components/ui/alchemy-sigils";
 import {EXTERNAL_LINKS} from "@/lib/links";
@@ -11,16 +9,8 @@ export function RegisterSection() {
 
     return (
         <section id="register" className="relative py-24 md:py-32">
-            {/* Background */}
-            <div className="absolute inset-0 z-0">
-                <Image
-                    src={IMAGES.backgrounds.paper || "/placeholder.svg"}
-                    alt={IMAGE_ALT.backgrounds.paper}
-                    fill
-                    className="object-cover opacity-90"
-                />
-                <div className="absolute inset-0 bg-parchment/80"/>
-            </div>
+            {/* Background - replaced images with CSS */}
+            <div className="absolute inset-0 z-0 bg-paper-texture"/>
 
             <div className="relative z-10 max-w-2xl mx-auto px-6">
                 {/* Section Header */}

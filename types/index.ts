@@ -47,16 +47,18 @@ export interface ExternalLinks {
 export type ImageRef = string | StaticImageData; // path or StaticImageData if using next/image imports
 
 export interface ImageMap {
-    backgrounds: Record<string, ImageRef>;
-    sections: Record<string, ImageRef>;
     prizes: Record<string, ImageRef>;
-    schedule: Record<string, ImageRef>;
-    decorative: Record<string, ImageRef>;
     team: Record<string, ImageRef>;
     archives: Record<string, ImageRef>;
     gallery: Record<string, ImageRef>;
-    icons: Record<string, ImageRef>;
 }
+
+export type ImageAltMap = {
+    prizes: Record<string, string>;
+    team: Record<string, string>;
+    archives: Record<string, string>;
+    gallery: Record<string, string>;
+};
 
 export interface GalleryImage {
     key: string;

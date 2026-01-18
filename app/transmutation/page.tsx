@@ -4,7 +4,6 @@ import React, {useState} from "react"
 import Link from "next/link";
 import {AlchemyCircle} from "@/components/ui/alchemy-sigils";
 import {BinaryRain} from "@/components/easter-eggs/binary-rain";
-import {IMAGES} from "@/lib/images";
 import {SIGILS} from "@/lib/sigils";
 
 const TRANSMUTATION_STAGES = [
@@ -56,13 +55,8 @@ export default function TransmutationPage() {
         <main className="relative min-h-screen bg-charcoal overflow-hidden">
             <BinaryRain active={showRain}/>
 
-            {/* Background */}
-            <div className="absolute inset-0 opacity-5"
-                style={{
-                    backgroundImage: `url(${IMAGES.backgrounds.noise})`,
-                    backgroundRepeat: "repeat",
-                }}
-            />
+            {/* Background - replaced images with CSS */}
+            <div className="absolute inset-0 opacity-5 bg-noise"/>
 
             <div className="relative z-10 container mx-auto px-4 py-16">
                 {/* Header */}

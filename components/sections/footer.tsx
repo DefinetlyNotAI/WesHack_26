@@ -1,9 +1,7 @@
 "use client";
 
 import {useState} from "react";
-import Image from "next/image";
 import Link from "next/link";
-import {IMAGE_ALT, IMAGES} from "@/lib/images";
 import {SigilDivider} from "@/components/ui/alchemy-sigils";
 import {EXTERNAL_LINKS} from "@/lib/links";
 import {SITE_DATA} from "@/lib/data";
@@ -41,16 +39,9 @@ export function Footer() {
 
     return (
         <footer className="relative py-12 border-t border-ink/10">
-            {/* Background */}
+            {/* Background - replaced images with CSS */}
             <div className="absolute inset-0 z-0 bg-charcoal">
-                <div className="absolute inset-0 opacity-10">
-                    <Image
-                        src={IMAGES.backgrounds.noise || "/placeholder.svg"}
-                        alt={IMAGE_ALT.backgrounds.noise}
-                        fill
-                        className="object-cover"
-                    />
-                </div>
+                <div className="absolute inset-0 opacity-10 bg-noise"/>
             </div>
 
             {/* Moon secret popup */}
@@ -58,7 +49,7 @@ export function Footer() {
                 <div
                     className="fixed bottom-20 left-1/2 -translate-x-1/2 z-50 p-4 bg-charcoal border border-phosphor animate-pulse">
                     <p className="font-mono text-phosphor text-sm">
-                        {`> LUNAR SECRET: Visit /transmutation`}
+                        {`> LUNAR SECRET: In the foot you shall find a tiny door which if you click you can transmute to become more... <`}
                     </p>
                 </div>
             )}
@@ -82,18 +73,11 @@ export function Footer() {
                 <div className="flex flex-col items-center justify-center gap-6">
                     {/* Logo / Symbol */}
                     <div className="flex items-center gap-4">
-                        <div className="relative w-8 h-8 opacity-60">
-                            <Image
-                                src={IMAGES.decorative.alchemySymbol || "/placeholder.svg"}
-                                alt={IMAGE_ALT.decorative.alchemySymbol}
-                                fill
-                                className="object-contain"
-                            />
-                        </div>
+                        <span className="text-2xl text-parchment/60">{SIGILS.pentagram}</span>
                         <span className="font-mono text-sm text-parchment/70">
               {event.name.toUpperCase().replace(" ", "_")}
             </span>
-                        <span className="text-parchment/30">{SIGILS.pentagram}</span>
+                        <span className="text-2xl text-parchment/60">{SIGILS.pentagram}</span>
                     </div>
 
                     {/* Navigation - Full width line on desktop, stacked rows on mobile */}
