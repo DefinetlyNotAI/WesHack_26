@@ -43,7 +43,7 @@ export function ScheduleSection() {
                 </div>
 
                 {/* Schedule Grid */}
-                <div className="grid md:grid-cols-3 gap-8">
+                <div className="grid md:grid-cols-2 gap-8">
                     {schedule.days.map((day, index) => (
                         <div
                             key={day.day}

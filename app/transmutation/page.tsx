@@ -167,11 +167,6 @@ export default function TransmutationPage() {
 
                         {/* Cipher Puzzle */}
                         <div className="grid md:grid-cols-2 gap-8">
-                            {/* Cipher puzzle placeholder (original component missing) */}
-                            <div className="p-6 border border-parchment/20 bg-charcoal/40 flex items-center justify-center text-parchment/60">
-                                <p className="font-mono text-sm">Cipher Puzzle is currently unavailable.</p>
-                            </div>
-
                             {/* Secret Texts */}
                             <div className="p-6 border border-parchment/20 bg-charcoal/50">
                                 <h3 className="font-serif text-parchment text-lg mb-4 flex items-center gap-2">
