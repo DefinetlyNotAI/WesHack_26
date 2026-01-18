@@ -31,7 +31,7 @@ const HIDDEN_COMMANDS = `
 - Type 'alchemy' in the console for a surprise
 - Konami Code unlocks secret knowledge
 - Click the 404 number 7 times
-- Find the hidden page at /transmutation
+- Find the hidden page of secrets
 - Hover over the footer sigils
 - The password is hidden in the binary
 `;

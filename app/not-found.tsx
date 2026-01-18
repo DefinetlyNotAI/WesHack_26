@@ -25,8 +25,37 @@ export default function NotFound() {
     const [binaryIndex, setBinaryIndex] = useState(0);
     const [clickCount, setClickCount] = useState(0);
     const [showSecret, setShowSecret] = useState(false);
+    const [isMounted, setIsMounted] = useState(false);
+    const [binaryPositions, setBinaryPositions] = useState<Array<{
+        left: number,
+        top: number,
+        delay: number,
+        char: string
+    }>>([]);
 
     useEffect(() => {
+        setIsMounted(true);
+
+        // Generate stable random positions for binary elements
+        const positions = Array.from({length: 20}).map(() => {
+            let left = Math.random() * 100;
+            let top = Math.random() * 100;
+
+            // Avoid center area (30-70% horizontally, 20-80% vertically) to prevent overlap with main content
+            while ((left > 30 && left < 70) && (top > 20 && top < 80)) {
+                left = Math.random() * 100;
+                top = Math.random() * 100;
+            }
+
+            return {
+                left,
+                top,
+                delay: Math.random() * 5,
+                char: Math.random() > 0.5 ? "1" : "0"
+            };
+        });
+        setBinaryPositions(positions);
+
         const interval = setInterval(() => {
             setGlitchText(GLITCH_TEXTS[Math.floor(Math.random() * GLITCH_TEXTS.length)]);
             setBinaryIndex((prev) => (prev + 1) % BINARY_MESSAGES.length);
@@ -56,22 +85,22 @@ export default function NotFound() {
 
             {/* Floating binary */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                {Array.from({length: 20}).map((_, i) => (
+                {isMounted && binaryPositions.map((pos, i) => (
                     <div
                         key={i}
                         className="absolute font-mono text-phosphor/20 text-xs animate-pulse"
                         style={{
-                            left: `${Math.random() * 100}%`,
-                            top: `${Math.random() * 100}%`,
-                            animationDelay: `${Math.random() * 5}s`,
+                            left: `${pos.left}%`,
+                            top: `${pos.top}%`,
+                            animationDelay: `${pos.delay}s`,
                         }}
                     >
-                        {Math.random() > 0.5 ? "1" : "0"}
+                        {pos.char}
                     </div>
                 ))}
             </div>
 
-            <div className="relative z-10 text-center px-4">
+            <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
                 {/* Glitching sigils */}
                 <div className="flex justify-center gap-4 mb-8 text-4xl text-amber/60">
                     <span className="animate-pulse">{SIGILS.fire}</span>
@@ -84,7 +113,7 @@ export default function NotFound() {
                 {/* 404 Number - clickable easter egg */}
                 <h1
                     onClick={handleSecretClick}
-                    className="font-serif text-[12rem] md:text-[16rem] leading-none text-parchment/10 select-none cursor-pointer hover:text-parchment/20 transition-colors"
+                    className="font-serif text-[8rem] sm:text-[12rem] md:text-[16rem] leading-none text-parchment/10 select-none cursor-pointer hover:text-parchment/20 transition-colors"
                     title={clickCount > 0 ? `${7 - clickCount} more...` : undefined}
                 >
                     404
@@ -121,11 +150,12 @@ export default function NotFound() {
                 <ParchmentButton href="/">
                     Return to the Laboratory
                 </ParchmentButton>
+            </div>
 
-                {/* Hidden message in corner */}
-                <div className="absolute bottom-4 right-4 font-mono text-[8px] text-parchment/10 select-all">
-                    48 65 78 20 3a 20 41 5a 4f 54 48
-                </div>
+            {/* Hidden message in corner */}
+            <div
+                className="absolute bottom-4 right-4 font-mono text-[8px] text-parchment/10 select-all hidden sm:block">
+                48 65 78 20 3a 20 41 5a 4f 54 48
             </div>
         </main>
     );
