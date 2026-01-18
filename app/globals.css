@@ -1,0 +1,130 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+    /* Digital Alchemy Theme Colors */
+    --ink: oklch(0.15 0.01 260);
+    --charcoal: oklch(0.30 0.01 260);
+    --parchment: oklch(0.95 0.02 85);
+    --offwhite: oklch(0.92 0.015 85);
+    --phosphor: oklch(0.65 0.18 145);
+    --amber: oklch(0.72 0.15 75);
+
+    /* Standard tokens mapped to theme */
+    --background: var(--parchment);
+    --foreground: var(--ink);
+    --card: var(--offwhite);
+    --card-foreground: var(--ink);
+    --popover: var(--parchment);
+    --popover-foreground: var(--ink);
+    --primary: var(--ink);
+    --primary-foreground: var(--parchment);
+    --secondary: var(--offwhite);
+    --secondary-foreground: var(--charcoal);
+    --muted: var(--offwhite);
+    --muted-foreground: var(--charcoal);
+    --accent: var(--phosphor);
+    --accent-foreground: var(--ink);
+    --destructive: oklch(0.577 0.245 27.325);
+    --destructive-foreground: oklch(0.577 0.245 27.325);
+    --border: oklch(0.80 0.02 85);
+    --input: oklch(0.88 0.02 85);
+    --ring: var(--phosphor);
+    --chart-1: var(--phosphor);
+    --chart-2: var(--amber);
+    --chart-3: var(--charcoal);
+    --chart-4: oklch(0.828 0.189 84.429);
+    --chart-5: oklch(0.769 0.188 70.08);
+    --radius: 0;
+    --sidebar: var(--charcoal);
+    --sidebar-foreground: var(--parchment);
+    --sidebar-primary: var(--phosphor);
+    --sidebar-primary-foreground: var(--ink);
+    --sidebar-accent: var(--ink);
+    --sidebar-accent-foreground: var(--parchment);
+    --sidebar-border: var(--ink);
+    --sidebar-ring: var(--phosphor);
+}
+
+@theme inline {
+    --font-sans: 'Libre Baskerville', 'Georgia', serif;
+    --font-serif: 'Libre Baskerville', 'Georgia', serif;
+    --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+
+    /* Theme colors */
+    --color-ink: var(--ink);
+    --color-charcoal: var(--charcoal);
+    --color-parchment: var(--parchment);
+    --color-offwhite: var(--offwhite);
+    --color-phosphor: var(--phosphor);
+    --color-amber: var(--amber);
+
+    /* Standard colors */
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
+    --radius-sm: calc(var(--radius));
+    --radius-md: calc(var(--radius));
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius));
+    --color-sidebar: var(--sidebar);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+    * {
+        @apply border-border outline-ring/50;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+/* CRT glow effect for phosphor elements */
+.glow-phosphor {
+    text-shadow: 0 0 10px oklch(0.65 0.18 145 / 0.5);
+}
+
+/* Scanline animation */
+@keyframes scanline {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+.animate-scanline {
+    animation: scanline 8s linear infinite;
+}
