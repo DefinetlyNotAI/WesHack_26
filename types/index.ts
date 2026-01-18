@@ -73,6 +73,12 @@ export interface TeamMember {
     imageKey: string; // key into IMAGES.team
 }
 
+export interface SubTeamMember {
+    name: string;
+    role?: string;
+    grade?: string;
+}
+
 export interface PrizeItem {
     rank?: string;
     title: string;
@@ -162,6 +168,7 @@ export interface TeamData {
     title: string;
     subtitle: string;
     members: TeamMember[];
+    subMembers: SubTeamMember[];
 }
 
 export interface GalleryData {

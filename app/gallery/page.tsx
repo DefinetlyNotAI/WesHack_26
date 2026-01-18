@@ -185,7 +185,7 @@ export default function GalleryPage() {
                         className="absolute top-6 right-6 font-mono text-parchment/60 hover:text-parchment transition-colors text-xl"
                         onClick={() => setSelectedImage(null)}
                     >
-                        {SIGILS.cross} CLOSE
+                        {SIGILS.flower} CLOSE
                     </button>
 
                     <div

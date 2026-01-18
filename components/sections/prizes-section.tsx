@@ -53,7 +53,7 @@ export function PrizesSection() {
                             {/* Prize Card */}
                             <div
                                 className="relative border border-parchment/20 bg-charcoal/50 backdrop-blur-sm overflow-hidden">
-                                <CornerSigils sigil="starFilled" className="text-amber/30 text-xs z-10"/>
+                                <CornerSigils sigil="star" className="text-amber/30 text-xs z-10"/>
 
                                 {/* Prize Image */}
                                 <div className="relative aspect-4/3 overflow-hidden">

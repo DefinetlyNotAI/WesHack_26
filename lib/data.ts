@@ -273,6 +273,23 @@ export const SITE_DATA: SiteData = {
                 imageKey: "mishal" as const,
             },
         ],
+        subMembers: [
+            {
+                name: "Name1",
+                role: "Role1",
+                grade: "12 BC"
+            },
+            {
+                name: "Name2",
+                role: "Role2",
+                grade: "13 GC"
+            },
+            {
+                name: "Name3",
+                role: "Role3",
+                grade: "13 BC"
+            },
+        ]
     },
 
 

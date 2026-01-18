@@ -9,18 +9,17 @@ export function TeamSection() {
 
     return (
         <section id="team" className="relative py-24 md:py-32">
-            {/* Background - replaced images with CSS */}
+            {/* Background */}
             <div className="absolute inset-0 z-0 bg-section-dark">
-                {/* Noise overlay - CSS texture */}
                 <div className="absolute inset-0 opacity-20 mix-blend-overlay bg-noise"/>
             </div>
 
             <div className="relative z-10 max-w-5xl mx-auto px-6">
                 {/* Section Header */}
                 <div className="text-center mb-16">
-          <span className="font-mono text-xs text-phosphor tracking-widest uppercase">
-            {SIGILS.caduceus} SECTION_05 {SIGILS.caduceus}
-          </span>
+                    <span className="font-mono text-xs text-phosphor tracking-widest uppercase">
+                        {SIGILS.caduceus} SECTION_05 {SIGILS.caduceus}
+                    </span>
                     <h2 className="font-serif text-3xl md:text-4xl text-parchment mt-4 mb-4">
                         {team.title}
                     </h2>
@@ -53,7 +52,6 @@ export function TeamSection() {
                         >
                             <CornerSigils sigil="star" className="text-parchment/20 text-xs"/>
 
-                            {/* Member Image */}
                             <div className="relative aspect-square overflow-hidden">
                                 <Image
                                     src={IMAGES.team[member.imageKey] || "/placeholder.svg"}
@@ -63,42 +61,71 @@ export function TeamSection() {
                                 />
                                 <div className="absolute inset-0 bg-ink/40 group-hover:bg-ink/20 transition-colors"/>
 
-                                {/* Index overlay with sigil */}
                                 <div className="absolute bottom-2 left-2 flex items-center gap-2">
-                                      <span className="font-mono text-xs text-phosphor/60">
+                                    <span className="font-mono text-xs text-phosphor/60">
                                         OP_{String(index + 1).padStart(2, "0")}
-                                      </span>
+                                    </span>
                                     <span className="text-parchment/40">
                                         {index === 0 && SIGILS.air}
                                         {index === 1 && SIGILS.iron}
                                         {index === 2 && SIGILS.gold}
                                         {index === 3 && SIGILS.silver}
-                                      </span>
+                                    </span>
                                 </div>
 
-                                {/* Hover sigil */}
                                 <div
                                     className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                                     <span className="text-parchment/40 text-4xl">{SIGILS.pentagram}</span>
                                 </div>
                             </div>
 
-                            {/* Member Info */}
                             <div className="p-4">
-                                <h3 className="font-serif text-lg text-parchment">
-                                    {member.name}
-                                </h3>
+                                <h3 className="font-serif text-lg text-parchment">{member.name}</h3>
                                 <p className="font-mono text-xs text-amber mt-1 flex items-center gap-2">
                                     <span>{SIGILS.arrowRight}</span>
                                     {member.role}
                                 </p>
-                                <p className="font-mono text-xs text-parchment/50 mt-2">
-                                    {member.description}
-                                </p>
+                                <p className="font-mono text-xs text-parchment/50 mt-2">{member.description}</p>
                             </div>
                         </div>
                     ))}
                 </div>
+
+                {/* Sub-members Section */}
+                {team.subMembers && team.subMembers.length > 0 && (
+                    <div className="mt-16">
+                        <h3 className="font-serif text-2xl text-parchment mb-6 text-center">
+                            Other Adepts
+                        </h3>
+                        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                            {team.subMembers.map((sub, idx) => {
+                                const cycle = [
+                                    SIGILS.pentagram,
+                                    SIGILS.atom,
+                                    SIGILS.ankh,
+                                    SIGILS.caduceus,
+                                    SIGILS.ouroboros,
+                                ];
+                                const sigil = cycle[idx % cycle.length];
+
+                                return (
+                                    <div
+                                        key={idx}
+                                        className="bg-ink/20 border border-parchment/10 p-4 text-parchment/80 rounded transition-colors hover:border-phosphor/30"
+                                    >
+                                        <div className="flex items-center justify-between mb-2">
+                                            <p className="font-mono text-sm">{sub.name}</p>
+                                            <span className="text-parchment/40 text-lg">{sigil}</span>
+                                        </div>
+                                        {sub.role && <p className="font-mono text-xs text-amber mt-1">{sub.role}</p>}
+                                        {sub.grade &&
+                                            <p className="font-mono text-xs text-parchment/50 mt-1">{sub.grade}</p>}
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    </div>
+                )}
 
                 {/* Footer with sigils */}
                 <div className="mt-12 text-center">

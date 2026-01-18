@@ -17,32 +17,24 @@ export const SIGILS = {
 
     // Esoteric symbols
     pentagram: "⛤",
-    hexagram: "✡",
+    atom: "⚛",
     ankh: "☥",
     caduceus: "☤",
     ouroboros: "⌘",
 
     // Decorative glyphs
     star: "✧",
-    starFilled: "★",
-    cross: "✝",
     flower: "❀",
     diamond: "◇",
-    diamondFilled: "◆",
 
     // Arrows and pointers
     arrowRight: "→",
     arrowLeft: "←",
-    arrowUp: "↑",
-    arrowDown: "↓",
 
     // Brackets and decorative
     leftFloral: "❧",
     rightFloral: "☙",
-    dagger: "†",
-    doubleDagger: "‡",
     bullet: "•",
-    section: "§",
 
     // Geometric
     triangle: "△",
@@ -56,9 +48,6 @@ export const SIGILS = {
     infinity: "∞",
     omega: "Ω",
     alpha: "α",
-    delta: "Δ",
-    phi: "Φ",
-    psi: "Ψ",
 
     // Terminal/code style
     cursor: "▮",
