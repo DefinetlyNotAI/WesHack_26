@@ -48,8 +48,7 @@ export function ArchivesSection() {
                 {/* Archives List */}
                 <div className="space-y-8">
                     {archives.experiments.map((exp, index) => (
-                        <div
-                            key={exp.year}
+                        <div key={`${exp.year}-${exp.title}-${index}`}
                             className="group relative border border-ink/10 bg-offwhite/50 hover:border-ink/30 transition-colors duration-300"
                         >
                             <CornerSigils sigil="star" className="text-charcoal/20 text-xs"/>

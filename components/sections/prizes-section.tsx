@@ -60,7 +60,9 @@ export function PrizesSection() {
                             key={prize.rank}
                             className={`
         relative group 
-        ${index === 1 ? "md:scale-110 md:-mt-8 z-10" : "md:mt-4"}
+        ${index === 1 ? "md:scale-110 md:-mt-8 z-10 order-1 md:order-2" : ""}
+        ${index === 0 ? "order-2 md:order-1 md:mt-4" : ""}
+        ${index === 2 ? "order-3 md:order-3 md:mt-4" : ""}
       `}
                         >
                             {/* Prize Card */}

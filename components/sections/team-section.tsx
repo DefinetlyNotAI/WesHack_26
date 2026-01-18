@@ -58,7 +58,12 @@ export function TeamSection() {
                     {team.members.map((member, index) => (
                         <div
                             key={member.name}
-                            className="group relative bg-ink/30 border border-parchment/10 hover:border-phosphor/30 transition-colors duration-300"
+                            className={`group relative bg-ink/30 border border-parchment/10 hover:border-phosphor/30 transition-colors duration-300
+                                ${index === 0 ? "order-3 lg:order-1" : ""}
+                                ${index === 1 ? "order-1 lg:order-2" : ""}
+                                ${index === 2 ? "order-2 lg:order-3" : ""}
+                                ${index === 3 ? "order-4 lg:order-4" : ""}
+                            `}
                         >
                             <CornerSigils sigil="star" className="text-parchment/20 text-xs"/>
 
