@@ -69,13 +69,18 @@ export function ConsoleMessages() {
         );
         // Decodes to "SECRET"
 
-        // Define global alchemy command
-        (window as unknown as Record<string, () => void>).alchemy = () => {
-            console.log("%cTRANSMUTATION COMPLETE", "color: gold; font-size: 24px;");
-            console.log("%cYou have invoked the ancient command.", "color: #22c55e;");
-            console.log("%cSecret: The true gold is the knowledge you gain along the way.", "color: #d4a574;");
-            console.log("%c🜚 Philosopher's Stone Acquired 🜚", "color: #f59e0b; font-size: 18px;");
-        };
+        // Define global alchemy command - auto-exec on reference
+        Object.defineProperty(window, 'alchemy', {
+            get() {
+                console.log("%cTRANSMUTATION COMPLETE", "color: gold; font-size: 24px;");
+                console.log("%cYou have invoked the ancient command.", "color: #22c55e;");
+                console.log("%cSecret: The true gold is the knowledge you gain along the way.", "color: #d4a574;");
+                console.log("%c🜚 Philosopher's Stone Acquired 🜚", "color: #f59e0b; font-size: 18px;");
+                return undefined; // prevents printing the function itself
+            },
+            configurable: true,
+            enumerable: false
+        });
 
         return () => {
             delete (window as unknown as Record<string, unknown>).alchemy;

@@ -44,6 +44,7 @@ export function HeroSection() {
             {/* Content */}
             <div className="relative z-30 text-center px-6 max-w-4xl mx-auto">
                 {/* Decorative alchemy circle */}
+                <br/>
                 <div className="mb-8 flex justify-center">
                     <AlchemyCircle className="text-ink opacity-40"/>
                 </div>

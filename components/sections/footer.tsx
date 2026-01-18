@@ -79,7 +79,7 @@ export function Footer() {
                     <span>{SIGILS.air}</span>
                 </div>
 
-                <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div className="flex flex-col items-center justify-center gap-6">
                     {/* Logo / Symbol */}
                     <div className="flex items-center gap-4">
                         <div className="relative w-8 h-8 opacity-60">
@@ -96,8 +96,8 @@ export function Footer() {
                         <span className="text-parchment/30">{SIGILS.pentagram}</span>
                     </div>
 
-                    {/* Navigation */}
-                    <nav className="flex flex-nowrap justify-center gap-6 overflow-x-hidden">
+                    {/* Navigation - Full width line on desktop, stacked rows on mobile */}
+                    <nav className="w-full flex flex-wrap justify-center gap-x-6 gap-y-3">
                         {[
                             {href: "#register", label: "Register"},
                             {href: "#process", label: "Process"},
