@@ -1,7 +1,8 @@
 import {IMAGES} from "@/lib/images";
 import {EXTERNAL_LINKS} from "@/lib/links";
+import type {SiteData} from "@/types";
 
-export const SITE_DATA = {
+export const SITE_DATA: SiteData = {
     // ==========================================
     // EVENT DETAILS
     // ==========================================

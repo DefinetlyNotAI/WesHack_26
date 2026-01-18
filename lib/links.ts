@@ -2,7 +2,9 @@
 // EXTERNAL LINKS - Replace with your actual URLs
 // ============================================
 
-export const EXTERNAL_LINKS = {
+import {ExternalLinks} from "@/types";
+
+export const EXTERNAL_LINKS: ExternalLinks = {
     // todo Google Form URL for registration
     registrationForm: "https://forms.google.com/YOUR_FORM_ID_HERE",
     contactEmail: "hackstreet.ae@gmail.com",

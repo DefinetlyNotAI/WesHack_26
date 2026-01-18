@@ -1,7 +1,8 @@
 "use client";
 
 import {useEffect, useState} from "react";
-import {SIGILS} from "@/components/ui/alchemy-sigils";
+
+import {SIGILS} from "@/lib/sigils";
 
 const TIME_GREETINGS = {
     witching: {

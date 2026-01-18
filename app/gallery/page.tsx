@@ -5,8 +5,9 @@ import Link from "next/link";
 import {useState} from "react";
 import {IMAGE_ALT, IMAGES} from "@/lib/images";
 import {ParchmentButton} from "@/components/ui/parchment-button";
-import {AlchemyCircle, CornerSigils, SigilDivider, SIGILS,} from "@/components/ui/alchemy-sigils";
+import {AlchemyCircle, CornerSigils, SigilDivider,} from "@/components/ui/alchemy-sigils";
 import {SITE_DATA} from "@/lib/data";
+import {SIGILS} from "@/lib/sigils";
 
 export default function GalleryPage() {
     const [selectedImage, setSelectedImage] = useState<string | null>(null);

@@ -1,17 +1,8 @@
 "use client";
 
-import {type ReactNode} from "react";
+import React from "react";
 import {cn} from "@/lib/ui";
-
-interface ParchmentButtonProps {
-    children: ReactNode;
-    href?: string;
-    onClick?: () => void;
-    variant?: "primary" | "secondary" | "ghost";
-    size?: "sm" | "md" | "lg";
-    className?: string;
-    external?: boolean;
-}
+import {ParchmentButtonProps} from "@/types";
 
 export function ParchmentButton({
                                     children,
@@ -21,7 +12,7 @@ export function ParchmentButton({
                                     size = "md",
                                     className,
                                     external = false,
-                                }: ParchmentButtonProps) {
+                                }: ParchmentButtonProps): React.ReactElement {
     const sizeClasses = {
         sm: "px-4 py-2 text-xs",
         md: "px-6 py-3 text-sm",

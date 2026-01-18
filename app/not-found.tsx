@@ -2,8 +2,8 @@
 
 import {useEffect, useState} from "react";
 import {ParchmentButton} from "@/components/ui/parchment-button";
-import {SIGILS} from "@/components/ui/alchemy-sigils";
 import {IMAGES} from "@/lib/images";
+import {SIGILS} from "@/lib/sigils";
 
 const GLITCH_TEXTS = [
     "TRANSMUTATION FAILED",

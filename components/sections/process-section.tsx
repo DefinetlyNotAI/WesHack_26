@@ -1,7 +1,8 @@
 import Image from "next/image";
 import {IMAGE_ALT, IMAGES} from "@/lib/images";
-import {CornerSigils, SigilDivider, SIGILS,} from "@/components/ui/alchemy-sigils";
+import {CornerSigils, SigilDivider,} from "@/components/ui/alchemy-sigils";
 import {SITE_DATA} from "@/lib/data";
+import {SIGILS} from "@/lib/sigils";
 
 export function ProcessSection() {
     const {process} = SITE_DATA;

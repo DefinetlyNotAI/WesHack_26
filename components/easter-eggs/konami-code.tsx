@@ -1,7 +1,8 @@
 "use client";
 
 import {useCallback, useEffect, useState} from "react";
-import {SIGILS} from "@/components/ui/alchemy-sigils";
+
+import {SIGILS} from "@/lib/sigils";
 
 const KONAMI_CODE = [
     "ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown",

@@ -2,9 +2,10 @@
 
 import React, {useState} from "react"
 import Link from "next/link";
-import {SIGILS, AlchemyCircle} from "@/components/ui/alchemy-sigils";
+import {AlchemyCircle} from "@/components/ui/alchemy-sigils";
 import {BinaryRain} from "@/components/easter-eggs/binary-rain";
 import {IMAGES} from "@/lib/images";
+import {SIGILS} from "@/lib/sigils";
 
 const TRANSMUTATION_STAGES = [
     {

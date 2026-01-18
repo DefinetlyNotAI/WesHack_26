@@ -3,8 +3,9 @@
 import Image from "next/image";
 import {IMAGE_ALT, IMAGES} from "@/lib/images";
 import {ParchmentButton} from "@/components/ui/parchment-button";
-import {AlchemyCircle, SigilDivider, SIGILS,} from "@/components/ui/alchemy-sigils";
+import {AlchemyCircle, SigilDivider,} from "@/components/ui/alchemy-sigils";
 import {SITE_DATA} from "@/lib/data";
+import {SIGILS} from "@/lib/sigils";
 
 export function HeroSection() {
     const {event, hero} = SITE_DATA;

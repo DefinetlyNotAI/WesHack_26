@@ -1,92 +1,6 @@
 import React from "react"
 import {cn} from "@/lib/ui";
-
-// Alchemy-inspired sigils using Unicode symbols and decorative characters
-export const SIGILS = {
-    // Elemental symbols
-    fire: "🜂",
-    water: "🜄",
-    earth: "🜃",
-    air: "🜁",
-
-    // Alchemical symbols
-    gold: "☉",
-    silver: "☽",
-    mercury: "☿",
-    copper: "♀",
-    iron: "♂",
-    tin: "♃",
-    lead: "♄",
-
-    // Esoteric symbols
-    pentagram: "⛤",
-    hexagram: "✡",
-    ankh: "☥",
-    caduceus: "☤",
-    ouroboros: "⌘",
-
-    // Decorative glyphs
-    star: "✧",
-    starFilled: "★",
-    cross: "✝",
-    flower: "❀",
-    diamond: "◇",
-    diamondFilled: "◆",
-
-    // Arrows and pointers
-    arrowRight: "→",
-    arrowLeft: "←",
-    arrowUp: "↑",
-    arrowDown: "↓",
-
-    // Brackets and decorative
-    leftFloral: "❧",
-    rightFloral: "☙",
-    dagger: "†",
-    doubleDagger: "‡",
-    bullet: "•",
-    section: "§",
-
-    // Geometric
-    triangle: "△",
-    triangleDown: "▽",
-    circle: "○",
-    circleFilled: "●",
-    square: "□",
-    squareFilled: "■",
-
-    // Special decorative
-    infinity: "∞",
-    omega: "Ω",
-    alpha: "α",
-    delta: "Δ",
-    phi: "Φ",
-    psi: "Ψ",
-
-    // Terminal/code style
-    cursor: "▮",
-    block: "█",
-    lightBlock: "░",
-    mediumBlock: "▒",
-
-    // Zodiac (for variety)
-    aries: "♈",
-    taurus: "♉",
-    gemini: "♊",
-    cancer: "♋",
-    leo: "♌",
-    virgo: "♍",
-    libra: "♎",
-    scorpio: "♏",
-    sagittarius: "♐",
-    capricorn: "♑",
-    aquarius: "♒",
-    pisces: "♓",
-
-    // Useful fallbacks previously provided in grouped export
-    void: "∅",
-    book: "📖",
-} as const;
+import {SIGILS} from "@/lib/sigils";
 
 // Sigil divider component
 export function SigilDivider({
@@ -95,7 +9,7 @@ export function SigilDivider({
                              }: {
     variant?: "simple" | "ornate" | "terminal";
     className?: string;
-}) {
+}): React.ReactElement {
     const dividers = {
         simple: `${SIGILS.diamond} ${SIGILS.bullet} ${SIGILS.diamond}`,
         ornate: `${SIGILS.leftFloral} ${SIGILS.pentagram} ${SIGILS.rightFloral}`,
@@ -120,7 +34,7 @@ export function CornerSigils({
                              }: {
     className?: string;
     sigil?: keyof typeof SIGILS;
-}) {
+}): React.ReactElement {
     return (
         <>
       <span className={cn("absolute top-2 left-2 opacity-30", className)}>
@@ -140,7 +54,7 @@ export function CornerSigils({
 }
 
 // Alchemical circle decoration
-export function AlchemyCircle({className}: { className?: string }) {
+export function AlchemyCircle({className}: { className?: string }): React.ReactElement {
     const symbols = [
         SIGILS.fire, SIGILS.water, SIGILS.earth, SIGILS.air,
         SIGILS.gold, SIGILS.silver, SIGILS.mercury, SIGILS.lead

@@ -1,9 +1,10 @@
 import Image from "next/image";
 import {IMAGE_ALT, IMAGES} from "@/lib/images";
 import {ParchmentButton} from "@/components/ui/parchment-button";
-import {CornerSigils, SigilDivider, SIGILS,} from "@/components/ui/alchemy-sigils";
+import {CornerSigils, SigilDivider,} from "@/components/ui/alchemy-sigils";
 import {EXTERNAL_LINKS} from "@/lib/links";
 import {SITE_DATA} from "@/lib/data";
+import {SIGILS} from "@/lib/sigils";
 
 export function ArchivesSection() {
     const {archives} = SITE_DATA;

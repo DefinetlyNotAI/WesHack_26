@@ -4,9 +4,10 @@ import {useState} from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {IMAGE_ALT, IMAGES} from "@/lib/images";
-import {SigilDivider, SIGILS} from "@/components/ui/alchemy-sigils";
+import {SigilDivider} from "@/components/ui/alchemy-sigils";
 import {EXTERNAL_LINKS} from "@/lib/links";
 import {SITE_DATA} from "@/lib/data";
+import {SIGILS} from "@/lib/sigils";
 
 export function Footer() {
     const {footer, event} = SITE_DATA;
@@ -108,7 +109,7 @@ export function Footer() {
                             item.isLink ? (
                                 <Link
                                     key={item.label}
-                                    href={item.href}
+                                    href={(item.href as string) ?? "#"}
                                     className="font-mono text-xs text-parchment/50 hover:text-phosphor transition-colors uppercase tracking-wider flex items-center gap-1 whitespace-nowrap"
                                 >
                                     <span className="text-parchment/30">{SIGILS.diamond}</span>

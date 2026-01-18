@@ -1,14 +1,8 @@
 "use client";
 
 import {useEffect, useState} from "react";
+import {Particle} from "@/types";
 
-interface Particle {
-    id: number;
-    x: number;
-    char: string;
-    delay: number;
-    duration: number;
-}
 
 export function BinaryRain({active = false}: { active?: boolean }) {
     const [particles, setParticles] = useState<Particle[]>([]);

@@ -2,7 +2,9 @@
 // IMAGE PATHS - Replace with your actual image paths
 // ============================================
 
-export const IMAGES = {
+import {ImageMap} from "@/types";
+
+export const IMAGES: ImageMap = {
     // Backgrounds
     backgrounds: {
         hero: "/images/backgrounds/hero-parchment.jpg",
@@ -93,7 +95,19 @@ export const IMAGES = {
 // IMAGE ALT TEXT - For accessibility
 // ============================================
 
-export const IMAGE_ALT = {
+export type ImageAltMap = {
+    backgrounds: Record<string, string>;
+    sections: Record<string, string>;
+    prizes: Record<string, string>;
+    schedule: Record<string, string>;
+    decorative: Record<string, string>;
+    team: Record<string, string>;
+    archives: Record<string, string>;
+    gallery: Record<string, string>;
+    icons: Record<string, string>;
+};
+
+export const IMAGE_ALT: ImageAltMap = {
     backgrounds: {
         hero: "Aged parchment texture with subtle ink stains",
         paper: "Weathered paper background",
@@ -170,4 +184,3 @@ export const IMAGE_ALT = {
 //
 // ============================================
 // ============================================
-
