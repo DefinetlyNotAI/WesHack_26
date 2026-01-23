@@ -29,7 +29,7 @@ export function RegisterSection() {
                 {/* Decorative sigils */}
                 <div className="flex justify-center gap-6 mb-8 text-charcoal/30">
                     <span className="text-xl">{SIGILS.mercury}</span>
-                    <span className="text-xl">{SIGILS.pentagram}</span>
+                    <span className="text-xl">{SIGILS.gold}</span>
                     <span className="text-xl">{SIGILS.mercury}</span>
                 </div>
 

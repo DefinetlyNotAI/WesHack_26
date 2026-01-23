@@ -73,11 +73,11 @@ export function Footer() {
                 <div className="flex flex-col items-center justify-center gap-6">
                     {/* Logo / Symbol */}
                     <div className="flex items-center gap-4">
-                        <span className="text-2xl text-parchment/60">{SIGILS.pentagram}</span>
+                        <span className="text-2xl text-parchment/60">{SIGILS.gold}</span>
                         <span className="font-mono text-sm text-parchment/70">
               {event.name.toUpperCase().replace(" ", "_")}
             </span>
-                        <span className="text-2xl text-parchment/60">{SIGILS.pentagram}</span>
+                        <span className="text-2xl text-parchment/60">{SIGILS.gold}</span>
                     </div>
 
                     {/* Navigation - Full width line on desktop, stacked rows on mobile */}

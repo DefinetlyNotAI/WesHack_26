@@ -68,7 +68,7 @@ export function AlchemyCircle({className}: { className?: string }): React.ReactE
             <div className="absolute inset-4 border border-current rounded-full opacity-20"/>
             {/* Center symbol */}
             <div className="absolute inset-0 flex items-center justify-center text-2xl opacity-60">
-                {SIGILS.pentagram}
+                {SIGILS.star}
             </div>
             {/* Orbital symbols */}
             {symbols.map((symbol, i) => {
