@@ -1,6 +1,6 @@
 "use client";
 
-import {CornerSigils, SigilDivider,} from "@/components/ui/alchemy-sigils";
+import {CornerSigils, SigilDivider} from "@/components/ui/alchemy-sigils";
 import {SITE_DATA} from "@/lib/data";
 import {SIGILS} from "@/lib/sigils";
 import {Clock, Hourglass} from "lucide-react";
@@ -10,14 +10,10 @@ export function ScheduleSection() {
 
     return (
         <section className="relative py-24 overflow-hidden">
-            {/* Background - replaced images with CSS */}
             <div className="absolute inset-0 bg-section-dark"/>
-
-            {/* Noise overlay - CSS texture */}
             <div className="absolute inset-0 opacity-30 mix-blend-overlay pointer-events-none bg-noise"/>
 
             <div className="container relative mx-auto px-6">
-                {/* Section Header */}
                 <div className="text-center mb-16">
                     <p className="font-mono text-phosphor text-sm tracking-[0.3em] mb-4">
                         {SIGILS.gold} TEMPORAL_SEQUENCE {SIGILS.silver}
@@ -32,7 +28,6 @@ export function ScheduleSection() {
                     </div>
                 </div>
 
-                {/* Zodiac decoration */}
                 <div className="flex justify-center gap-3 mb-12 text-parchment/20 text-lg">
                     <span>{SIGILS.aries}</span>
                     <span>{SIGILS.taurus}</span>
@@ -42,7 +37,6 @@ export function ScheduleSection() {
                     <span>{SIGILS.virgo}</span>
                 </div>
 
-                {/* Schedule Grid */}
                 <div className="grid md:grid-cols-2 gap-8">
                     {schedule.days.map((day, index) => (
                         <div
@@ -51,7 +45,6 @@ export function ScheduleSection() {
                         >
                             <CornerSigils sigil="star" className="text-phosphor/30 text-xs"/>
 
-                            {/* Day Header */}
                             <div className="border-b border-parchment/20 p-6">
                                 <div className="flex items-center justify-between mb-2">
                   <span className="font-mono text-phosphor text-xs">
@@ -64,7 +57,6 @@ export function ScheduleSection() {
                                 <h3 className="font-serif text-2xl text-parchment">
                                     {day.title}
                                 </h3>
-                                {/* Day-specific sigil */}
                                 <div className="mt-2 text-parchment/30">
                                     {index === 0 && <span>{SIGILS.fire} Genesis</span>}
                                     {index === 1 && <span>{SIGILS.earth} Labor</span>}
@@ -72,11 +64,10 @@ export function ScheduleSection() {
                                 </div>
                             </div>
 
-                            {/* Events List */}
                             <div className="p-6 space-y-4">
                                 {day.events.map((event, eventIndex) => (
                                     <div key={eventIndex} className="flex gap-4 group">
-                    <span className="font-mono text-amber text-sm w-14 shrink-0">
+                    <span className="font-mono text-amber text-sm whitespace-nowrap shrink-0">
                       {event.time}
                     </span>
                                         <span
@@ -87,7 +78,6 @@ export function ScheduleSection() {
                                 ))}
                             </div>
 
-                            {/* Day number watermark */}
                             <div
                                 className="absolute -bottom-4 -right-4 font-serif text-8xl text-parchment/5 pointer-events-none">
                                 0{index + 1}
@@ -96,10 +86,12 @@ export function ScheduleSection() {
                     ))}
                 </div>
 
-                {/* Clockwork decoration */}
                 <div className="flex flex-col items-center mt-16 gap-4">
                     <Clock className="w-30 h-30 text-parchment opacity-30"/>
-                    <SigilDivider variant="terminal" className="max-w-xs text-parchment/30"/>
+                    <SigilDivider
+                        variant="terminal"
+                        className="max-w-xs text-parchment/30"
+                    />
                     <div className="flex gap-4 text-parchment/20">
                         <span>{SIGILS.libra}</span>
                         <span>{SIGILS.scorpio}</span>
