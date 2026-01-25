@@ -62,6 +62,7 @@ export const SITE_DATA: SiteData = {
             "Be a student under the age of 18.",
             "Form a circle of one to three adepts.",
             "Bring resolve, curiosity, and proper energy.",
+            "Ensure you have 20 dhs for the entrance offering.",
         ],
 
         // Button text
