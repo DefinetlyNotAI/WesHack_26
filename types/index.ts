@@ -122,6 +122,7 @@ export interface HeroData {
     subtitle: string;
     description: string[];
     ctaText: string;
+    rulesCtaText: string;
 }
 
 export interface RegistrationData {

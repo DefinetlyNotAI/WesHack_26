@@ -45,6 +45,7 @@ export const SITE_DATA: SiteData = {
 
         // Call-to-action button text
         ctaText: "BEGIN_THE_GREAT_WORK",
+        rulesCtaText: "VIEW_RULES",
     },
 
     // ==========================================
