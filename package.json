@@ -1,6 +1,6 @@
 {
   "name": "weshack-26-digital-alchemy",
-  "version": "0.1.0",
+  "version": "13.2.2026",
   "private": true,
   "scripts": {
     "build": "next build",

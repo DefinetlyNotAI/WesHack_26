@@ -292,6 +292,14 @@ export const SITE_DATA: SiteData = {
             {name: "Aon Alaa", role: "Media Lead"},
             {name: "Adham Hamdy", role: "Media Member"},
             {name: "Omar Moamen", role: "Media Member"},
+
+            // Security Department
+            {name: "Khalifa Nasser", role: "Security"},
+            {name: "Faris Waleed", role: "Security"},
+            {name: "Abdullah Mohammed", role: "Security"},
+            {name: "Omar Elhoussaini", role: "Security"},
+            {name: "Antony Sami", role: "Security"},
+            {name: "Abdullah Mohanad", role: "Security"}
         ]
     },
 

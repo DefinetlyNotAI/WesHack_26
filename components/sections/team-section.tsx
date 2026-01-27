@@ -137,7 +137,7 @@ export function TeamSection() {
                 {team.subMembers && team.subMembers.length > 0 && (
                     <div className="mt-16">
                         <h3 className="font-serif text-2xl text-parchment mb-6 text-center">
-                            Other Adepts
+                            Team Adepts
                         </h3>
 
                         <Grid
@@ -147,14 +147,27 @@ export function TeamSection() {
 
                         <Grid
                             cols="sm:grid-cols-2 lg:grid-cols-5"
-                            items={team.subMembers.filter(m => m.role === "Team Member").slice(0, 5)}
+                            items={team.subMembers
+                                .filter(m => m.role === "Team Member")
+                                .slice(0, 5)}
                         />
 
                         <Grid
                             cols="sm:grid-cols-2 lg:grid-cols-6"
                             offset={5}
-                            items={team.subMembers.filter(m => m.role === "Team Member").slice(5, 11)}
+                            items={team.subMembers
+                                .filter(m => m.role === "Team Member")
+                                .slice(5, 11)}
                         />
+                    </div>
+                )}
+
+                {/* Media Section */}
+                {team.subMembers?.some(m => m.role.includes("Media")) && (
+                    <div className="mt-16">
+                        <h3 className="font-serif text-2xl text-parchment mb-6 text-center">
+                            Media Team
+                        </h3>
 
                         <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
                             {team.subMembers
@@ -169,6 +182,22 @@ export function TeamSection() {
                                     </div>
                                 ))}
                         </div>
+                    </div>
+                )}
+
+                {/* Security Section */}
+                {team.subMembers.filter(m => m.role === "Security").length >= 6 && (
+                    <div className="mt-12">
+                        <h3 className="font-serif text-xl text-parchment mb-6 text-center">
+                            Security Detail
+                        </h3>
+
+                        <Grid
+                            cols="sm:grid-cols-2 lg:grid-cols-3"
+                            items={team.subMembers
+                                .filter(m => m.role === "Security")
+                                .slice(-6)}
+                        />
                     </div>
                 )}
 
