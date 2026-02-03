@@ -73,10 +73,22 @@ export interface TeamMember {
     imageKey: string; // key into IMAGES.team
 }
 
-export interface SubTeamMember {
+interface SubTeamMember {
     name: string;
-    role: string;
-    grade?: string;
+}
+
+export interface SubMembers {
+    leads: SubTeamMember[];
+
+    girls: SubTeamMember[];
+    boys: SubTeamMember[];
+
+    media: {
+        lead: SubTeamMember[];
+        members: SubTeamMember[];
+    };
+
+    security: SubTeamMember[];
 }
 
 export interface PrizeItem {
@@ -169,7 +181,7 @@ export interface TeamData {
     title: string;
     subtitle: string;
     members: TeamMember[];
-    subMembers: SubTeamMember[];
+    subMembers: SubMembers;
 }
 
 export interface GalleryData {

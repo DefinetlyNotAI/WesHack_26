@@ -49,7 +49,24 @@ function Grid({
 
 export function TeamSection() {
     const {team} = SITE_DATA;
+    const sub = team.subMembers;
 
+    const coreMembers = [
+        ...sub.girls,
+        ...sub.boys
+    ];
+
+    const renderGrid = (
+        items: typeof coreMembers,
+        cols: string,
+        offset?: number
+    ) => (
+        <Grid
+            cols={cols}
+            offset={offset}
+            items={items}
+        />
+    );
     return (
         <section id="team" className="relative py-24 md:py-32">
             {/* Background */}
@@ -133,71 +150,53 @@ export function TeamSection() {
                         </div>
                     ))}
                 </div>
+
                 {/* Sub-members Section */}
-                {team.subMembers && team.subMembers.length > 0 && (
+                {sub && (
                     <div className="mt-16">
                         <h3 className="font-serif text-2xl text-parchment mb-6 text-center">
                             Team Adepts
                         </h3>
 
-                        <Grid
-                            cols="sm:grid-cols-2 lg:grid-cols-2"
-                            items={team.subMembers.filter(m => m.role === "Team Lead")}
-                        />
+                        {renderGrid(sub.leads, "sm:grid-cols-2 lg:grid-cols-2")}
 
-                        <Grid
-                            cols="sm:grid-cols-2 lg:grid-cols-5"
-                            items={team.subMembers
-                                .filter(m => m.role === "Team Member")
-                                .slice(0, 5)}
-                        />
+                        {renderGrid(coreMembers.slice(0, 5), "sm:grid-cols-2 lg:grid-cols-5")}
 
-                        <Grid
-                            cols="sm:grid-cols-2 lg:grid-cols-6"
-                            offset={5}
-                            items={team.subMembers
-                                .filter(m => m.role === "Team Member")
-                                .slice(5, 11)}
-                        />
+                        {renderGrid(coreMembers.slice(5), "sm:grid-cols-2 lg:grid-cols-6", 5)}
                     </div>
                 )}
 
                 {/* Media Section */}
-                {team.subMembers?.some(m => m.role.includes("Media")) && (
+                {sub?.media && (
                     <div className="mt-16">
                         <h3 className="font-serif text-2xl text-parchment mb-6 text-center">
                             Media Team
                         </h3>
 
                         <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-                            {team.subMembers
-                                .filter(m => m.role.includes("Media"))
-                                .sort(a => (a.role === "Media Lead" ? -1 : 1))
-                                .map((sub, idx) => (
-                                    <div key={sub.name} className="w-full sm:w-1/4">
-                                        <MemberCard
-                                            sub={sub}
-                                            sigil={SIGIL_CYCLE[idx % SIGIL_CYCLE.length]}
-                                        />
-                                    </div>
-                                ))}
+                            {[...sub.media.lead, ...sub.media.members].map((member, idx) => (
+                                <div key={member.name} className="w-full sm:w-1/4">
+                                    <MemberCard
+                                        sub={member}
+                                        sigil={SIGIL_CYCLE[idx % SIGIL_CYCLE.length]}
+                                    />
+                                </div>
+                            ))}
                         </div>
                     </div>
                 )}
 
                 {/* Security Section */}
-                {team.subMembers.filter(m => m.role === "Security").length >= 7 && (
+                {sub?.security?.length >= 7 && (
                     <div className="mt-12">
                         <h3 className="font-serif text-xl text-parchment mb-6 text-center">
                             Security Detail
                         </h3>
 
-                        <Grid
-                            cols="sm:grid-cols-2 lg:grid-cols-3"
-                            items={team.subMembers
-                                .filter(m => m.role === "Security")
-                                .slice(-7)}
-                        />
+                        {renderGrid(
+                            sub.security.slice(-7),
+                            "sm:grid-cols-2 lg:grid-cols-3"
+                        )}
                     </div>
                 )}
 

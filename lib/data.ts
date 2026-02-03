@@ -268,42 +268,50 @@ export const SITE_DATA: SiteData = {
                 imageKey: "mishal" as const,
             },
         ],
-        subMembers: [
-            // Leads
-            {name: "Aizay Mushaq", role: "Team Lead"},
-            {name: "Ahmed Saad", role: "Team Lead"},
+        subMembers: {
+            leads: [
+                {name: "Aizay Mushaq"},
+                {name: "Ahmed Saad"}
+            ],
 
-            // Girls
-            {name: "Shafana Shahriar", role: "Team Member"},
-            {name: "Maryam Ali", role: "Team Member"},
-            {name: "Lara Ameen", role: "Team Member"},
-            {name: "Lara Elgharably", role: "Team Member"},
-            {name: "Leen Elgharably", role: "Team Member"},
+            girls: [
+                {name: "Shafana Shahriar"},
+                {name: "Maryam Ali"},
+                {name: "Lara Ameen"},
+                {name: "Lara Elgharably"},
+                {name: "Leen Elgharably"},
+                {name: "Fatima Hatem"}
+            ],
 
-            // Boys
-            {name: "Ayaan Islam", role: "Team Member"},
-            {name: "Mohammad Bin Majid", role: "Team Member"},
-            {name: "Maher Ben Khadra", role: "Team Member"},
-            {name: "Issa alamoody", role: "Team Member"},
-            {name: "Fahmy alamoody", role: "Team Member"},
-            {name: "Samir Ibrahim", role: "Team Member"},
+            boys: [
+                {name: "Ayaan Islam"},
+                {name: "Mohammad Bin Majid"},
+                {name: "Issa Alamoody"},
+                {name: "Fahmy Alamoody"},
+                {name: "Samir Ibrahim"}
+            ],
 
-            // Media Department
-            {name: "Aon Alaa", role: "Media Lead"},
-            {name: "Adham Hamdy", role: "Media Member"},
-            {name: "Omar Moamen", role: "Media Member"},
+            media: {
+                lead: [
+                    {name: "Aon Alaa"}
+                ],
+                members: [
+                    {name: "Adham Hamdy"},
+                    {name: "Omar Moamen"}
+                ]
+            },
 
-            // Security Department
-            {name: "Fatima Hatem", role: "Security"},
-            {name: "Khalifa Nasser", role: "Security"},
-            {name: "Faris Waleed", role: "Security"},
-            {name: "Abdullah Mohammed", role: "Security"},
-            {name: "Omar Elhoussaini", role: "Security"},
-            {name: "Antony Sami", role: "Security"},
-            {name: "Abdullah Mohanad", role: "Security"}
-        ]
+            security: [
+                {name: "Malak Mohamed"},
+                {name: "Khalifa Nasser"},
+                {name: "Faris Waleed"},
+                {name: "Abdullah Mohammed"},
+                {name: "Omar Elhoussaini"},
+                {name: "Antony Sami"},
+                {name: "Abdullah Mohanad"}
+            ]
+        }
     },
-
 
     // ==========================================
     // GALLERY PAGE
