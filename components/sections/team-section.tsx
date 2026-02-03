@@ -186,7 +186,7 @@ export function TeamSection() {
                 )}
 
                 {/* Security Section */}
-                {team.subMembers.filter(m => m.role === "Security").length >= 6 && (
+                {team.subMembers.filter(m => m.role === "Security").length >= 7 && (
                     <div className="mt-12">
                         <h3 className="font-serif text-xl text-parchment mb-6 text-center">
                             Security Detail
@@ -196,7 +196,7 @@ export function TeamSection() {
                             cols="sm:grid-cols-2 lg:grid-cols-3"
                             items={team.subMembers
                                 .filter(m => m.role === "Security")
-                                .slice(-6)}
+                                .slice(-7)}
                         />
                     </div>
                 )}

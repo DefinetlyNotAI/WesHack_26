@@ -294,6 +294,7 @@ export const SITE_DATA: SiteData = {
             {name: "Omar Moamen", role: "Media Member"},
 
             // Security Department
+            {name: "Fatima Hatem", role: "Security"},
             {name: "Khalifa Nasser", role: "Security"},
             {name: "Faris Waleed", role: "Security"},
             {name: "Abdullah Mohammed", role: "Security"},
