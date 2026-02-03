@@ -27,6 +27,52 @@ export const SITE_DATA: SiteData = {
 
         // Optional hex code for theming (appears in hero)
         hexCode: "0x000000000000",
+
+        // Event Rules
+        rules: {
+            title: "Competition Rules",
+            sections: [
+                {
+                    id: 1,
+                    title: "Use of AI",
+                    items: [
+                        "AI tools are not permitted.",
+                        "Junior teams may use AI for up to 10 percent of the total work.",
+                        "Senior teams cannot use any AI generated code.",
+                        "The only exception is AI used strictly for debugging (and won't count as part of your percentage if you are a junior).",
+                        "Exceeding these limits results in disqualification."
+                    ]
+                },
+                {
+                    id: 2,
+                    title: "Boilerplate's",
+                    items: [
+                        "Boilerplate code or templates are allowed.",
+                        "Boilerplate's will not be judged, reviewed, or scored and won't affect you negatively.",
+                        "All boilerplate must be clearly identified and referenced, failure to do so may result in disqualification."
+                    ]
+                },
+                {
+                    id: 3,
+                    title: "Pre Event Work Limits",
+                    items: [
+                        "Senior teams Years 10 to 13 have up to 10 percent work allowed to be done before the event.",
+                        "Junior teams Years 7 to 9 have up to 20 percent work allowed to be done before the event.",
+                        "These limitations do not apply to documentation, presentations or planning.",
+                        "Physical or external components that require preparation (such as 3D printing) do not count toward work percentage limits.",
+                        "All additional work must be completed during the event or you may be at risk of disqualification."
+                    ]
+                },
+                {
+                    id: 4,
+                    title: "Year Group Definitions",
+                    items: [
+                        "Juniors are Years 7 to 9",
+                        "Seniors are Years 10 to 13"
+                    ]
+                },
+            ]
+        }
     },
 
     // ==========================================

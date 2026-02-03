@@ -10,6 +10,7 @@ import {SIGILS} from "@/lib/sigils";
 export function HeroSection() {
     const {event, hero} = SITE_DATA;
     const [showRules, setShowRules] = useState(false);
+    const {title, sections} = SITE_DATA.event.rules;
 
     return (
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -106,53 +107,27 @@ export function HeroSection() {
                         </button>
 
                         <h2 className="font-serif text-2xl text-ink mb-4">
-                            Competition Rules
+                            {title}
                         </h2>
 
                         <div className="font-mono text-sm text-charcoal/80 space-y-5 leading-relaxed">
-                            <section>
-                                <h3 className="text-ink font-semibold mb-1">1. Use of AI</h3>
-                                <ul className="list-disc ml-5 space-y-1">
-                                    <li>AI tools are not permitted.</li>
-                                    <li>The only exception is AI used strictly for debugging.</li>
-                                    <li>Junior teams may use AI for up to 10 percent of the total work.</li>
-                                    <li>Exceeding these limits results in disqualification.</li>
-                                </ul>
-                            </section>
+                            {sections.map(section => (
+                                <section key={section.id}>
+                                    <h3 className="text-ink font-semibold mb-1">
+                                        {section.id}. {section.title}
+                                    </h3>
 
-                            <section>
-                                <h3 className="text-ink font-semibold mb-1">2. Boilerplates</h3>
-                                <ul className="list-disc ml-5 space-y-1">
-                                    <li>Boilerplate code or templates are allowed.</li>
-                                    <li>Boilerplates will not be judged, reviewed, or scored.</li>
-                                    <li>All boilerplate must be clearly identified and referenced.</li>
-                                </ul>
-                            </section>
+                                    {section.items && (
+                                        <ul className="list-disc ml-5 space-y-1">
+                                            {section.items.map(item => (
+                                                <li key={item}>{item}</li>
+                                            ))}
+                                        </ul>
+                                    )}
 
-                            <section>
-                                <h3 className="text-ink font-semibold mb-1">3. Pre Event Work Limits</h3>
-                                <ul className="list-disc ml-5 space-y-1">
-                                    <li>Senior teams Years 10 to 13 up to 10 percent before the event.</li>
-                                    <li>Junior teams Years 7 to 9 up to 20 percent before the event.</li>
-                                    <li>All additional work must be completed during the event.</li>
-                                </ul>
-                            </section>
-
-                            <section>
-                                <h3 className="text-ink font-semibold mb-1">4. Year Group Definitions</h3>
-                                <ul className="list-disc ml-5 space-y-1">
-                                    <li>Juniors Years 7 to 9</li>
-                                    <li>Seniors Years 10 to 13</li>
-                                </ul>
-                            </section>
-
-                            <section>
-                                <h3 className="text-ink font-semibold mb-1">5. Excluded Materials</h3>
-                                <p>
-                                    Physical or external components such as 3D printing do not count toward work
-                                    percentage limits.
-                                </p>
-                            </section>
+                                    {section.text && <p>{section.text}</p>}
+                                </section>
+                            ))}
                         </div>
                     </div>
                 </div>

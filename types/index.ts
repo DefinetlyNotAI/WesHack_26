@@ -120,8 +120,22 @@ export interface ScheduleDay {
     events: ScheduleEvent[];
 }
 
+// Rules section structure
+interface RuleSection {
+    id: number;
+    title: string;
+    items?: string[];
+    text?: string;
+}
+
+interface EventRules {
+    title: string;
+    sections: RuleSection[];
+}
+
 // Partial site data shapes; align with actual SITE_DATA which provides these fields
 export interface EventData {
+    rules: EventRules;
     name: string;
     tagline: string;
     year: number;
