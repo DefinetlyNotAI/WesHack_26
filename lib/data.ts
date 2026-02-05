@@ -413,12 +413,5 @@ export const SITE_DATA: SiteData = {
 
         // Copyright holder name
         copyright: "Hack Street",
-
-        // Footer links
-        links: [
-            {label: "LINK_1_TEXT", href: "/YOUR_LINK_1_PATH"},
-            {label: "LINK_2_TEXT", href: "/YOUR_LINK_2_PATH"},
-            {label: "LINK_3_TEXT", href: "/YOUR_LINK_3_PATH"},
-        ],
     },
 } as const;

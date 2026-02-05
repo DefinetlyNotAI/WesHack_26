@@ -220,7 +220,6 @@ export interface ContactData {
 export interface FooterData {
     tagline: string;
     copyright: string;
-    links: LinkItem[];
 }
 
 export interface SiteData {
