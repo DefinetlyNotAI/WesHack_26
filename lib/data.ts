@@ -48,6 +48,7 @@ export const SITE_DATA: SiteData = {
                     title: "Boilerplate's",
                     items: [
                         "Boilerplate code or templates are allowed.",
+                        "However Site Builders (such as WIX/Squarespace) aren't allowed at all and will result in disqualification.",
                         "Boilerplate's will not be judged, reviewed, or scored and won't affect you negatively.",
                         "All boilerplate must be clearly identified and referenced, failure to do so may result in disqualification."
                     ]
