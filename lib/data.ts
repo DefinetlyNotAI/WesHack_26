@@ -243,7 +243,7 @@ export const SITE_DATA: SiteData = {
         extra: {
             title: "Best Student Choice",
             description: "Voted by the students for their favorite project.",
-            value: "Certificate",
+            value: "Medal & Certificate",
         },
     },
 
