@@ -86,12 +86,20 @@ export function ContactSection() {
                 </span>
                                 <div className="font-mono text-sm text-ink mt-1 space-y-1">
                                     <a
+                                        href={EXTERNAL_LINKS.social?.insta ?? "#"}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="block hover:text-phosphor transition-colors"
+                                    >
+                                        {SIGILS.arrowRight} Wes:Hack Instagram
+                                    </a>
+                                    <a
                                         href={EXTERNAL_LINKS.social?.discord ?? "#"}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="block hover:text-phosphor transition-colors"
                                     >
-                                        {SIGILS.arrowRight} Hack Street
+                                        {SIGILS.arrowRight} Hack Street Discord
                                     </a>
                                     <a
                                         href={EXTERNAL_LINKS.social?.github ?? "#"}
@@ -99,7 +107,7 @@ export function ContactSection() {
                                         rel="noopener noreferrer"
                                         className="block hover:text-phosphor transition-colors"
                                     >
-                                        {SIGILS.arrowRight} github/digital-alchemy
+                                        {SIGILS.arrowRight} This site on GitHub
                                     </a>
                                 </div>
                             </div>

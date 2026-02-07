@@ -349,13 +349,14 @@ export const SITE_DATA: SiteData = {
             },
 
             security: [
+                {name: "Abdullah Mohanad"},
+                {name: "Ali Ehsan"},
+                {name: "Ghanim Muhammad"},
+                {name: "Abdullah Bin Tarique"},
                 {name: "Malak Mohamed"},
-                {name: "Khalifa Nasser"},
-                {name: "Faris Waleed"},
-                {name: "Abdullah Mohammed"},
-                {name: "Omar Elhoussaini"},
-                {name: "Antony Sami"},
-                {name: "Abdullah Mohanad"}
+                {name: "Shahad Abdalla"},
+                {name: "Zain Al Barbarawi"},
+                {name: "Hana Elashry"}
             ]
         }
     },
@@ -400,7 +401,7 @@ export const SITE_DATA: SiteData = {
         methods: [
             {type: "email", label: "Email", value: EXTERNAL_LINKS.contactEmail},
             {type: "location", label: "Location", value: "Wesgreen International School"},
-            {type: "responseTime", label: "Response Time", value: "Within 48 hours"},
+            {type: "responseTime", label: "Response_Time", value: "Within 48 hours"},
         ],
     },
 

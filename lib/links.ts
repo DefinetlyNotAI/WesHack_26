@@ -8,6 +8,7 @@ export const EXTERNAL_LINKS: ExternalLinks = {
     registrationForm: "https://forms.gle/VoMjxshuVnct6D9J7",
     contactEmail: "contact@weshack.org",
     social: {
+        insta: "https://www.instagram.com/wes.hack26",
         discord: "https://discord.gg/ZTryF6SRRp",
         github: "https://github.com/DefinetlyNotAI/WesHack_26",
     },
