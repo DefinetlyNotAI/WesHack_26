@@ -20,14 +20,6 @@ export interface ParchmentButtonProps {
 }
 
 // Shared types
-
-export interface LinkItem {
-    href: string;
-    label: string;
-    external?: boolean;
-    isLink?: boolean; // sometimes used to indicate Link vs anchor
-}
-
 export interface SocialLinks {
     discord: string;
     github: string;

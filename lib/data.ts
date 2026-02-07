@@ -335,7 +335,6 @@ export const SITE_DATA: SiteData = {
                 {name: "Mohammad Bin Majid"},
                 {name: "Issa Alamoody"},
                 {name: "Fahmy Alamoody"},
-                {name: "Samir Ibrahim"}
             ],
 
             media: {

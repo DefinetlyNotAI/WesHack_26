@@ -158,11 +158,21 @@ export function TeamSection() {
                             Team Adepts
                         </h3>
 
-                        {renderGrid(sub.leads, "sm:grid-cols-2 lg:grid-cols-2")}
+                        {renderGrid(
+                            sub.leads.map(m => ({...m, role: "Team Lead"})),
+                            "sm:grid-cols-2 lg:grid-cols-2 justify-center"
+                        )}
 
-                        {renderGrid(coreMembers.slice(0, 5), "sm:grid-cols-2 lg:grid-cols-5")}
-
-                        {renderGrid(coreMembers.slice(5), "sm:grid-cols-2 lg:grid-cols-6", 5)}
+                        {Array.from({length: Math.ceil(coreMembers.length / 5)}).map((_, i) => (
+                            <div key={`core-row-${i}`}>
+                                {renderGrid(
+                                    coreMembers
+                                        .slice(i * 5, i * 5 + 5)
+                                        .map(m => ({...m, role: "Team Member"})),
+                                    "sm:grid-cols-2 lg:grid-cols-5 justify-center"
+                                )}
+                            </div>
+                        ))}
                     </div>
                 )}
 
@@ -177,7 +187,10 @@ export function TeamSection() {
                             {[...sub.media.lead, ...sub.media.members].map((member, idx) => (
                                 <div key={member.name} className="w-full sm:w-1/4">
                                     <MemberCard
-                                        sub={member}
+                                        sub={{
+                                            ...member,
+                                            role: idx < sub.media.lead.length ? "Media Lead" : "Media Team"
+                                        }}
                                         sigil={SIGIL_CYCLE[idx % SIGIL_CYCLE.length]}
                                     />
                                 </div>
@@ -187,16 +200,22 @@ export function TeamSection() {
                 )}
 
                 {/* Security Section */}
-                {sub?.security?.length >= 7 && (
+                {sub?.security?.length > 0 && (
                     <div className="mt-12">
                         <h3 className="font-serif text-xl text-parchment mb-6 text-center">
                             Security Detail
                         </h3>
 
-                        {renderGrid(
-                            sub.security.slice(-7),
-                            "sm:grid-cols-2 lg:grid-cols-3"
-                        )}
+                        {Array.from({length: Math.ceil(sub.security.length / 4)}).map((_, i) => (
+                            <div key={`security-row-${i}`}>
+                                {renderGrid(
+                                    sub.security
+                                        .slice(i * 4, i * 4 + 4)
+                                        .map(m => ({...m, role: "Security"})),
+                                    "sm:grid-cols-2 lg:grid-cols-4 justify-center"
+                                )}
+                            </div>
+                        ))}
                     </div>
                 )}
 
