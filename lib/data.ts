@@ -189,7 +189,7 @@ export const SITE_DATA: SiteData = {
                     {time: "08:00 - 08:20", event: "Registrations / attendance"},
                     {time: "08:20 - 10:40", event: "Session 3"},
                     {time: "10:40 - 11:00", event: "Break"},
-                    {time: "11:00 - 13:15", event: "Session 4 + Submission deadline"},
+                    {time: "11:00 - 12:15", event: "Session 4 + Submission deadline"},
                     {time: "12:25 - 13:30", event: "Student showcase"},
                     {time: "13:30 - 14:00", event: "Judges' deliberation"},
                     {time: "14:00 - 15:00", event: "Closing ceremony + awards"},
