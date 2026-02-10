@@ -36,9 +36,10 @@ export const SITE_DATA: SiteData = {
                     id: 1,
                     title: "Use of AI",
                     items: [
-                        "AI tools are not permitted.",
-                        "Junior teams may use AI for up to 10 percent of the total work.",
+                        "AI tools are heavily restricted to encourage original work and creativity.",
+                        "Junior teams may use AI code for up to 10 percent of the total work.",
                         "Senior teams cannot use any AI generated code.",
+                        "AI agents or tools that generate code in the environment, such as GitHub Copilot or AI Web Builders, are not allowed at all and will result in disqualification.",
                         "The only exception is AI used strictly for debugging (and won't count as part of your percentage if you are a junior).",
                         "Exceeding these limits results in disqualification."
                     ]
