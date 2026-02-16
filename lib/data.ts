@@ -429,6 +429,161 @@ export const SITE_DATA: SiteData = {
 
 
     // ==========================================
+    // CREDITS
+    // ==========================================
+    credits: {
+        leaders: [
+            {name: "Shahm Najeeb", role: "Founder and Lead"},
+            {name: "Layal Melhem", role: "Head of Logistics"},
+            {name: "Mustafa Moamen", role: "Event Lead"},
+            {name: "Mishal Irfan", role: "Head of PR"},
+        ],
+        teamMembers: [
+            {name: "Aizay Mushaq", role: "Lead"},
+            {name: "Ahmed Saad", role: "Lead"},
+            {name: "Shafana Shahriar", role: "Team Member"},
+            {name: "Maryam Ali", role: "Team Member"},
+            {name: "Lara Ameen", role: "Team Member"},
+            {name: "Lara Elgharably", role: "Team Member"},
+            {name: "Leen Elgharably", role: "Team Member"},
+            {name: "Fatima Hatem", role: "Team Member"},
+            {name: "Ayaan Islam", role: "Team Member"},
+            {name: "Mohammad Bin Majid", role: "Team Member"},
+            {name: "Issa Alamoody", role: "Team Member"},
+            {name: "Fahmy Alamoody", role: "Team Member"},
+            {name: "Aon Alaa", role: "Media Lead"},
+            {name: "Adham Hamdy", role: "Media Team"},
+            {name: "Omar Moamen", role: "Media Team"},
+            {name: "Abdullah Mohanad", role: "Security"},
+            {name: "Ali Ehsan", role: "Security"},
+            {name: "Ghanim Muhammad", role: "Security"},
+            {name: "Abdullah Bin Tarique", role: "Security"},
+            {name: "Malak Mohamed", role: "Security"},
+            {name: "Shahad Abdalla", role: "Security"},
+            {name: "Zain Al Barbarawi", role: "Security"},
+            {name: "Hana Elashry", role: "Security"},
+        ],
+        winners: {
+            juniorLeague: [
+                {
+                    place: "1st Place",
+                    teamName: "Protocol Elixir",
+                    members: ["Assem Hamdy"]
+                },
+                {
+                    place: "2nd Place",
+                    teamName: "HCK",
+                    members: ["Ahmad Bhatti"]
+                },
+                {
+                    place: "3rd Place",
+                    teamName: "Hacker girlies",
+                    members: ["Aleen Qusai Mahmood Alhaj", "Ayana Binti Faizan"]
+                },
+            ],
+            seniorLeague: [
+                {
+                    place: "1st Place",
+                    teamName: "EJH³",
+                    members: ["Eyad Samara", "Hamza Mohamed Abdelmonem", "Jamal Almoody"]
+                },
+                {
+                    place: "2nd Place",
+                    teamName: "The vøid",
+                    members: ["Aya Aladdin Salim"]
+                },
+                {
+                    place: "3rd Place",
+                    teamName: "Nbuddies",
+                    members: ["Saim Salman", "Marcus Gabriel Solidum Brandis"]
+                },
+            ],
+            studentVoted: {
+                teamName: "Raman 2",
+                members: ["Raman Rasul"]
+            },
+        },
+        specialAwards: {
+            bestTeamMembers: ["Adham Hamdy", "Mohammad Fahmy", "Fatima Hatem", "Lara Elgharbali"],
+            bestSecurity: ["Malak Mohammad"],
+        },
+        participants: [
+            "Aleen Alhaj",
+            "Ayat Ansari",
+            "Fizzah Ali",
+            "Rafeef Taha",
+            "Tinomuda Togara",
+            "Zaid Khadra",
+            "Abdulrahman Almasoud",
+            "Baraa Hamzeh",
+            "Gulchekhra",
+            "Hamza Hussein",
+            "Jalal Hikmat",
+            "Jana Mohamad",
+            "Mahmoud Deirani",
+            "Sami Ghazi",
+            "Aeman Fatima",
+            "Ahmad Bhatti",
+            "Ahmed Ibrahim",
+            "Mohamed Alkhatab",
+            "Areesha Asadullah",
+            "Asbah Khan",
+            "Assem Hamdy",
+            "Aya Salim",
+            "Ayana Faizan",
+            "Ayten Toeima",
+            "Bassam Barjas",
+            "Batool Tamer",
+            "Eyad Samara",
+            "Farah Eid",
+            "Fares Reda",
+            "Faysal Eid",
+            "Hamza Alwahsh",
+            "Hareem Sharjeel",
+            "Hatem Albanna",
+            "Jamal Al-Amoody",
+            "Janah Thunebat",
+            "Kaitlyn Monteath",
+            "Kamilia Imtiaz",
+            "Karma Barakat",
+            "Kenzy Elkhatib",
+            "Kim Erica",
+            "Lily Hazem",
+            "Malik Ali",
+            "Marcus Brandis",
+            "Maria Kizhakkuden",
+            "Masarrah Alamin",
+            "Mohammad Dureidi",
+            "Mohammed Sohaib",
+            "Mohammed Zaydan",
+            "Moustafa Tamer",
+            "Muhammad Kamran",
+            "Muhammad Azlan",
+            "Muhammad Ismail",
+            "Muhammad Salman",
+            "Muhammad Tawqeer",
+            "Noirita Zaman",
+            "Omar Abdelghany",
+            "Omar Elmeslmany",
+            "Raman Rasul",
+            "Sadja Rasula",
+            "Saeed",
+            "Saif Alshamsi",
+            "Saleem Akkad",
+            "Somaia Saif",
+            "Sultan Mohammed",
+            "Syeda Noor",
+            "Syeda Rahman",
+            "Yafet Admassu",
+            "Yara Hassan",
+            "Yaseer Ahmed",
+            "Zahra Khan",
+            "Zain Saeed",
+            "Zain Elgharably",
+        ],
+    },
+
+    // ==========================================
     // FOOTER
     // ==========================================
     footer: {

@@ -1,0 +1,68 @@
+/* Credits Page Styles */
+
+/* Hide scrollbar but keep scrolling functionality */
+.creditsContainer {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+.creditsContainer::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+/* Add a subtle fade at top and bottom */
+.fadeOverlay {
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 15vh;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.fadeTop {
+    top: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1), transparent);
+}
+
+.fadeBottom {
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 1), transparent);
+}
+
+/* Fast Forward Button */
+.fastForwardButton {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 50;
+    padding: 1rem 1.5rem;
+    background: rgba(212, 175, 55, 0.2);
+    border: 2px solid rgba(212, 175, 55, 0.5);
+    color: #d4af37;
+    font-family: monospace;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    user-select: none;
+}
+
+.fastForwardButton:hover {
+    background: rgba(212, 175, 55, 0.3);
+    border-color: rgba(212, 175, 55, 0.8);
+}
+
+.fastForwardButton:active {
+    background: rgba(212, 175, 55, 0.4);
+    border-color: #d4af37;
+    transform: scale(0.95);
+}
+
+.fastForwardButton.active {
+    background: rgba(212, 175, 55, 0.5);
+    border-color: #d4af37;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+

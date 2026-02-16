@@ -1,5 +1,6 @@
 import {CornerSigils, SigilDivider} from "@/components/ui/alchemy-sigils";
 import {SIGILS} from "@/lib/sigils";
+import {ParchmentButton} from "@/components/ui/parchment-button";
 
 export function ThankYouSection() {
     return (
@@ -59,6 +60,13 @@ export function ThankYouSection() {
                         <span>{SIGILS.aries}</span>
                         <span>{SIGILS.leo}</span>
                         <span>{SIGILS.sagittarius}</span>
+                    </div>
+
+                    {/* Credits Button */}
+                    <div className="mt-8 text-center">
+                        <ParchmentButton href="/credits" variant="secondary" size="md">
+                            VIEW_CREDITS
+                        </ParchmentButton>
                     </div>
                 </div>
             </div>

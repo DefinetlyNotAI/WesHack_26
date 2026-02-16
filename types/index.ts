@@ -220,6 +220,42 @@ export interface FooterData {
     copyright: string;
 }
 
+export interface CreditsLeader {
+    name: string;
+    role: string;
+}
+
+export interface CreditsTeamMember {
+    name: string;
+    role: string;
+}
+
+export interface WinningTeam {
+    place: string;
+    teamName: string;
+    members: string[];
+}
+
+export interface StudentVotedTeam {
+    teamName: string;
+    members: string[];
+}
+
+export interface CreditsData {
+    leaders: CreditsLeader[];
+    teamMembers: CreditsTeamMember[];
+    winners: {
+        juniorLeague: WinningTeam[];
+        seniorLeague: WinningTeam[];
+        studentVoted: StudentVotedTeam;
+    };
+    specialAwards: {
+        bestTeamMembers: string[];
+        bestSecurity: string[];
+    };
+    participants: string[];
+}
+
 export interface SiteData {
     event: EventData;
     hero: HeroData;
@@ -231,5 +267,6 @@ export interface SiteData {
     team: TeamData;
     gallery: GalleryData;
     contact: ContactData;
+    credits: CreditsData;
     footer: FooterData;
 }
