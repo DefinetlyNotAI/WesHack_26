@@ -280,6 +280,14 @@ export const SITE_DATA: SiteData = {
                 projects: 6,
                 imageKey: "checkpoint" as const,
             },
+            {
+                year: "2026",
+                title: "WesHack 26",
+                theme: "Digital Alchemy",
+                participants: 75,
+                projects: 30,
+                imageKey: "weshack26" as const,
+            },
         ],
     },
 
@@ -389,6 +397,20 @@ export const SITE_DATA: SiteData = {
             {key: "img15", year: "2024", caption: "Hard at work during WES:HACK 2024"},
             {key: "img16", year: "2024", caption: "The entrance to WES:HACK 2024"},
         ] as Array<{ key: keyof typeof IMAGES.gallery; year: string; caption: string }>,
+
+        // WesHack 2026 Gallery Images
+        images26: [
+            {key: "wh26-1", path: "/images/gallery/weshack-26/1.jpg"},
+            {key: "wh26-2", path: "/images/gallery/weshack-26/2.jpg"},
+            {key: "wh26-3", path: "/images/gallery/weshack-26/3.jpg"},
+            {key: "wh26-4", path: "/images/gallery/weshack-26/4.jpg"},
+            {key: "wh26-5", path: "/images/gallery/weshack-26/5.jpg"},
+            {key: "wh26-6", path: "/images/gallery/weshack-26/6.jpg"},
+            {key: "wh26-7", path: "/images/gallery/weshack-26/7.jpg"},
+            {key: "wh26-8", path: "/images/gallery/weshack-26/8.jpg"},
+            {key: "wh26-9", path: "/images/gallery/weshack-26/9.jpg"},
+            {key: "wh26-10", path: "/images/gallery/weshack-26/10.jpg"}
+        ] as Array<{ key: string; path: string }>,
     },
 
     // ==========================================

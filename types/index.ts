@@ -190,11 +190,17 @@ export interface TeamData {
     subMembers: SubMembers;
 }
 
+interface SpGalleryImage {
+    key: string
+    path: string
+}
+
 export interface GalleryData {
     title: string;
     subtitle: string;
     description: string;
     images: GalleryImage[];
+    images26: SpGalleryImage[];
 }
 
 export interface ContactMethod {

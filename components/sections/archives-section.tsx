@@ -119,7 +119,7 @@ export function ArchivesSection() {
                     <SigilDivider variant="terminal" className="max-w-xs mx-auto mb-8 text-charcoal/30"/>
 
                     <ParchmentButton href={EXTERNAL_LINKS.galleryPage} variant="secondary" size="lg">
-                        View Full Visual Archive
+                        View Old Visual Archive
                     </ParchmentButton>
 
                     <p className="font-mono text-xs text-charcoal/50 mt-8">

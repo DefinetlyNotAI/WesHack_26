@@ -1,16 +1,17 @@
 "use client";
 
-import {useState} from "react";
-
 import {ParchmentButton} from "@/components/ui/parchment-button";
 import {AlchemyCircle, SigilDivider} from "@/components/ui/alchemy-sigils";
 import {SITE_DATA} from "@/lib/data";
 import {SIGILS} from "@/lib/sigils";
+import {usePathname} from 'next/navigation'
+import {useState} from "react";
 
 export function HeroSection() {
     const {event, hero} = SITE_DATA;
     const [showRules, setShowRules] = useState(false);
     const {title, sections} = SITE_DATA.event.rules;
+    const pathname = usePathname()
 
     return (
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -70,13 +71,19 @@ export function HeroSection() {
 
                 {/* Buttons */}
                 <div className="flex flex-col sm:flex-row justify-center gap-4">
-                    <ParchmentButton href="#register" size="lg">
+                    <ParchmentButton href={pathname === '/' ? '#thankyou' : '#register'} size="lg">
                         {hero.ctaText}
                     </ParchmentButton>
 
-                    <ParchmentButton size="lg" onClick={() => setShowRules(true)}>
-                        {hero.rulesCtaText}
-                    </ParchmentButton>
+                    {pathname === '/' ? (
+                        <ParchmentButton href="/mirror-history" size="lg">
+                            VIEW_MIRROR_HISTORY
+                        </ParchmentButton>
+                    ) : (
+                        <ParchmentButton size="lg" onClick={() => setShowRules(true)}>
+                            {hero.rulesCtaText}
+                        </ParchmentButton>
+                    )}
                 </div>
 
                 <p className="mt-12 font-mono text-xs text-charcoal/50 tracking-wider">
@@ -94,7 +101,7 @@ export function HeroSection() {
             </div>
 
             {/* Rules Modal */}
-            {showRules && (
+            {showRules && pathname !== '/' && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
                     <div
                         className="relative bg-parchment w-full h-full sm:h-auto sm:max-h-[85vh] sm:max-w-2xl overflow-y-auto p-6 sm:p-8 text-left">

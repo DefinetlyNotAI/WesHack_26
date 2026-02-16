@@ -24,6 +24,7 @@ export const IMAGES: ImageMap = {
         weshack24: "/images/archives/weshack-24.jpg",
         scrapyard: "/images/archives/scrapyard.jpg",
         checkpoint: "/images/archives/checkpoint.jpg",
+        weshack26: "/images/archives/weshack-26.jpg",
     },
     // Gallery images
     gallery: {
@@ -69,6 +70,7 @@ export const IMAGE_ALT: ImageAltMap = {
         weshack24: "WesHack 2024 experiment documentation",
         scrapyard: "Scrapyard 2025 experiment documentation",
         checkpoint: "CheckPoint 2025 experiment documentation",
+        weshack26: "WesHack 2026 experiment documentation",
     },
     gallery: {
         img1: "Hackathon picture from CheckPoint",
