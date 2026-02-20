@@ -352,7 +352,8 @@ export const SITE_DATA: SiteData = {
                 ],
                 members: [
                     {name: "Adham Hamdy"},
-                    {name: "Omar Moamen"}
+                    {name: "Omar Moamen"},
+                    {name: "Mohammed Mahmoud"},
                 ]
             },
 
@@ -454,6 +455,7 @@ export const SITE_DATA: SiteData = {
             {name: "Aon Alaa", role: "Media Lead"},
             {name: "Adham Hamdy", role: "Media Team"},
             {name: "Omar Moamen", role: "Media Team"},
+            {name: "Mohammed Mahmoud", role: "Media Team"},
             {name: "Abdullah Mohanad", role: "Security"},
             {name: "Ali Ehsan", role: "Security"},
             {name: "Ghanim Muhammad", role: "Security"},
