@@ -521,6 +521,7 @@ export const SITE_DATA: SiteData = {
             "Jalal Hikmat",
             "Jana Mohamad",
             "Mahmoud Deirani",
+            "Ali Alhaddad",
             "Sami Ghazi",
             "Aeman Fatima",
             "Ahmad Bhatti",
