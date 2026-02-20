@@ -504,7 +504,7 @@ export const SITE_DATA: SiteData = {
             },
         },
         specialAwards: {
-            bestTeamMembers: ["Adham Hamdy", "Mohammad Fahmy", "Fatima Hatem", "Lara Elgharbali"],
+            bestTeamMembers: ["Adham Hamdy", "Mohammad Fahmy", "Fatima Hatem", "Lara Elgharably"],
             bestSecurity: ["Malak Mohammad"],
         },
         participants: [
